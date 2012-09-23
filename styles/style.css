@@ -1,0 +1,10 @@
+@import url("isotopeStyles.css");
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    font-size: 10px;
+}
