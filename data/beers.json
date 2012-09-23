@@ -1,0 +1,17 @@
+[{
+    "BeerName": "Hopping Hare",
+    "Brewery" : "Badger Brewery",
+    "Region"  : "Blandford St Mary, Dorset",
+    "BeerType": "IPA",
+    "Strength": "5.4",
+    "Notes": "Hopping Hare is thrice hopped with three types of hop used during the brewing process. Aromatic Goldings and Cascade combine to provide an uplifting citrus-grapefruit and floral aroma, whilst First Gold carries the bitterness.",
+    "Image" : "hoppingHare.png"
+}, {
+    "BeerName": "Old Speckled Hen",
+    "Brewery" : "Morland Brewery",
+    "Region"  : "Abingdon, Oxon",
+    "BeerType": "IPA",
+    "Strength": "5.4",
+    "Notes": "Old Speckled Hen has a full, smooth flavour and is very easy to drink. Its rich amber colour and superb fruity aromas are complemented by a delicious blend of malty tastes. Toffee and malt combine with bitterness on the back of the tongue to give a balanced sweetness, followed by a refreshingly dry finish",
+    "Image" : "hoppingHare.png"
+}]
