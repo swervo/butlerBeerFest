@@ -2,7 +2,7 @@
     "beerName": "Hopping Hare",
     "brewery" : "Badger Brewery",
     "region"  : "Blandford St Mary, Dorset",
-    "beerType": "IPA",
+    "beerType": "session",
     "strength": "4.4",
     "notes": "Hopping Hare is thrice hopped with three types of hop used during the brewing process. Aromatic Goldings and Cascade combine to provide an uplifting citrus-grapefruit and floral aroma, whilst First Gold carries the bitterness.",
     "image" : "hoppingHare.jpg"
@@ -10,7 +10,7 @@
     "beerName": "Old Speckled Hen",
     "brewery" : "Morland Brewery",
     "region"  : "Abingdon, Oxon",
-    "beerType": "IPA",
+    "beerType": "ipa",
     "strength": "5.4",
     "notes": "Old Speckled Hen has a full, smooth flavour and is very easy to drink. Its rich amber colour and superb fruity aromas are complemented by a delicious blend of malty tastes. Toffee and malt combine with bitterness on the back of the tongue to give a balanced sweetness, followed by a refreshingly dry finish",
     "image" : "oldSpeckledHen.jpg"
@@ -18,7 +18,7 @@
     "beerName": "Hobgoblin",
     "brewery" : "Wychwood Brewery",
     "region"  : "Witney, Oxon",
-    "beerType": "Ruby",
+    "beerType": "ruby",
     "strength": "5.2",
     "notes": "Traditionally craft brewed with Chocolate and Crystal malts and a blend of Styrian, Goldings & Fuggles hops to produce a full-bodied, Ruby beer that delivers a delicious chocolate toffee malt flavour, balanced with a rounded moderate bitterness and an overall fruity, mischievous character",
     "image" : "hobgoblin.jpg"
@@ -26,7 +26,7 @@
     "beerName": "Champion Ale",
     "brewery" : "McEwans Brewery (Heineken)",
     "region"  : "Edinburgh, Scotland",
-    "beerType": "Strong",
+    "beerType": "strong",
     "strength": "7.3",
     "notes": "An overly strong brew that clearly knows it's audience and a good way 'tae get pure shteamin'. No trace of the true origins of this mystic brew can be found anywhere on the whole internets. Beware.",
     "image" : "mcewansChampion.jpg"
@@ -34,7 +34,7 @@
     "beerName": "Old Tom Ale",
     "brewery" : "Robinsons Unicorn Brewery",
     "region"  : "Stockport, Cheshire",
-    "beerType": "Strong",
+    "beerType": "strong",
     "strength": "8.5",
     "notes": "Superior dark, rich and warming strong ale with a cherry brandy like colour and character. Booming balance of ripe malt, and peppery hops combined with roasted nut and chocolate flavours with a smoky richness. Distinctive deep port wine finish with bitter hops balance complemented by heady, vinous aromas of dark fruit.",
     "image" : "oldTom.png"
@@ -42,8 +42,32 @@
     "beerName": "Abbot Ale",
     "brewery" : "Green King, Westgate Brewery",
     "region"  : "Bury St Edmunds, Suffolk",
-    "beerType": "Strong",
+    "beerType": "strong",
     "strength": "5",
     "notes": "Hailed by the late beer writer Michael Jackson as 'one of the great characters of the beer world', Abbot Ale is brewed for quality of the highest order. Abbot is an irresistible ale with masses of fruit characters, a malty richness and superb hop balance. It is brewed longer to a unique recipe, which makes it the full-flavoured, smooth and mature beer it is today",
     "image" : "abbot.jpg"
+}, {
+    "beerName": "Brains SA",
+    "brewery" : "The Cardiff Brewery",
+    "region"  : "Cardiff, Wales",
+    "beerType": "session",
+    "strength": "4.2",
+    "notes": "The renowned 'special ale' is copper coloured with a full premium quality flavour. A nutty richness derived from a blend of fine pale and crystal malts is balanced with a satisfying dryness from the unique use of three hops: Challenger, Goldings and Fuggles. The aroma has a hint of spirit which adds to the legendary mystique of this premium cask beer",
+    "image" : "brains.jpg"
+}, {
+    "beerName": "1845",
+    "brewery" : "Fullers Brewery",
+    "region"  : "London",
+    "beerType": "strong",
+    "strength": "6.3",
+    "notes": "Roger Protz, beer writer and critic, describes 1845 as 'a rich beer with a fruit cake aroma, spices and nutmeg from malt and hops resulting in a dry, fruity finish'. It is also bottle conditioned, which means it is live beer which continues to ferment in bottle, adding to the complex development of flavours.",
+    "image" : "1845.jpg"
+}, {
+    "beerName": "Poacher's Choice",
+    "brewery" : "Badger Brewery",
+    "region"  : "Blandford St Mary, Dorset",
+    "beerType": "ruby",
+    "strength": "5.7",
+    "notes": "A rich, smooth brew with a softly spiced sweetness with dark liquorice notes and a fruity damson aroma. Poachers Choice is a gutsy ruby ale that is sweet, full bodied, malty & bitter",
+    "image" : "poachersChoice.jpg"
 }]
