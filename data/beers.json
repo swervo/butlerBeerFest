@@ -1,17 +1,49 @@
 [{
-    "BeerName": "Hopping Hare",
-    "Brewery" : "Badger Brewery",
-    "Region"  : "Blandford St Mary, Dorset",
-    "BeerType": "IPA",
-    "Strength": "4.4",
-    "Notes": "Hopping Hare is thrice hopped with three types of hop used during the brewing process. Aromatic Goldings and Cascade combine to provide an uplifting citrus-grapefruit and floral aroma, whilst First Gold carries the bitterness.",
-    "Image" : "hoppingHare.png"
+    "beerName": "Hopping Hare",
+    "brewery" : "Badger Brewery",
+    "region"  : "Blandford St Mary, Dorset",
+    "beerType": "IPA",
+    "strength": "4.4",
+    "notes": "Hopping Hare is thrice hopped with three types of hop used during the brewing process. Aromatic Goldings and Cascade combine to provide an uplifting citrus-grapefruit and floral aroma, whilst First Gold carries the bitterness.",
+    "image" : "hoppingHare.jpg"
 }, {
-    "BeerName": "Old Speckled Hen",
-    "Brewery" : "Morland Brewery",
-    "Region"  : "Abingdon, Oxon",
-    "BeerType": "IPA",
-    "Strength": "5.4",
-    "Notes": "Old Speckled Hen has a full, smooth flavour and is very easy to drink. Its rich amber colour and superb fruity aromas are complemented by a delicious blend of malty tastes. Toffee and malt combine with bitterness on the back of the tongue to give a balanced sweetness, followed by a refreshingly dry finish",
-    "Image" : "hoppingHare.png"
+    "beerName": "Old Speckled Hen",
+    "brewery" : "Morland Brewery",
+    "region"  : "Abingdon, Oxon",
+    "beerType": "IPA",
+    "strength": "5.4",
+    "notes": "Old Speckled Hen has a full, smooth flavour and is very easy to drink. Its rich amber colour and superb fruity aromas are complemented by a delicious blend of malty tastes. Toffee and malt combine with bitterness on the back of the tongue to give a balanced sweetness, followed by a refreshingly dry finish",
+    "image" : "oldSpeckledHen.jpg"
+}, {
+    "beerName": "Hobgoblin",
+    "brewery" : "Wychwood Brewery",
+    "region"  : "Witney, Oxon",
+    "beerType": "Ruby",
+    "strength": "5.2",
+    "notes": "Traditionally craft brewed with Chocolate and Crystal malts and a blend of Styrian, Goldings & Fuggles hops to produce a full-bodied, Ruby beer that delivers a delicious chocolate toffee malt flavour, balanced with a rounded moderate bitterness and an overall fruity, mischievous character",
+    "image" : "hobgoblin.jpg"
+}, {
+    "beerName": "Champion Ale",
+    "brewery" : "McEwans Brewery (Heineken)",
+    "region"  : "Edinburgh, Scotland",
+    "beerType": "Strong",
+    "strength": "7.3",
+    "notes": "An overly strong brew that clearly knows it's audience and a good way 'tae get pure shteamin'. No trace of the true origins of this mystic brew can be found anywhere on the whole internets. Beware.",
+    "image" : "mcewansChampion.jpg"
+}, {
+    "beerName": "Old Tom Ale",
+    "brewery" : "Robinsons Unicorn Brewery",
+    "region"  : "Stockport, Cheshire",
+    "beerType": "Strong",
+    "strength": "8.5",
+    "notes": "Superior dark, rich and warming strong ale with a cherry brandy like colour and character. Booming balance of ripe malt, and peppery hops combined with roasted nut and chocolate flavours with a smoky richness. Distinctive deep port wine finish with bitter hops balance complemented by heady, vinous aromas of dark fruit.",
+    "image" : "oldTom.png"
+}, {
+    "beerName": "Abbot Ale",
+    "brewery" : "Green King, Westgate Brewery",
+    "region"  : "Bury St Edmunds, Suffolk",
+    "beerType": "Strong",
+    "strength": "5",
+    "notes": "Hailed by the late beer writer Michael Jackson as 'one of the great characters of the beer world', Abbot Ale is brewed for quality of the highest order. Abbot is an irresistible ale with masses of fruit characters, a malty richness and superb hop balance. It is brewed longer to a unique recipe, which makes it the full-flavoured, smooth and mature beer it is today",
+    "image" : "abbot.jpg"
 }]

@@ -1,11 +1,51 @@
 @import url("isotopeStyles.css");
 
+
+
 html, body {
     height: 100%;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
     font-family: 'Open Sans', sans-serif;
 }
 
 html {
     font-size: 10px;
+}
+
+body {
+    background: #EEE;
+    color: #000;
+}
+
+header {
+    height: 10rem;
+    background-color: red;
+}
+
+.mainContent {
+    width: 95%;
+    position: relative;
+    margin: 0 auto;
+/*    padding-right: 2rem;*/
+}
+
+.mainContainer {
+    width: 80%;
+}
+
+nav {
+    width: 20%;
+    float: right;
+}
+
+.beerTile {
+    position: absolute;
+    height: 300px;
+    width: 350px;
+    margin: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px 1px #666;
 }
