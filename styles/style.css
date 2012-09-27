@@ -47,5 +47,22 @@ nav {
     width: 350px;
     margin: 10px;
     background-color: white;
+/*    background-image: url("../assets/1845.jpg");*/
+    background-repeat: no-repeat;
+    background-position: -50% 5%;
     box-shadow: 0 0 10px 1px #666;
+}
+
+h3 {
+    font-size: 3rem;
+    color: #F01478;
+    margin: 22px 0 5px 100px;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 0 0 2px rgba(240, 20, 120, 0.2);
+}
+
+p {
+    font-size: 1.2rem;
+    color: #999;
+    margin: 0 10px 0 100px;
 }

@@ -37,7 +37,7 @@
     "beerType": "strong",
     "strength": "8.5",
     "notes": "Superior dark, rich and warming strong ale with a cherry brandy like colour and character. Booming balance of ripe malt, and peppery hops combined with roasted nut and chocolate flavours with a smoky richness. Distinctive deep port wine finish with bitter hops balance complemented by heady, vinous aromas of dark fruit.",
-    "image" : "oldTom.png"
+    "image" : "oldTom.jpg"
 }, {
     "beerName": "Abbot Ale",
     "brewery" : "Green King, Westgate Brewery",
@@ -53,7 +53,7 @@
     "beerType": "session",
     "strength": "4.2",
     "notes": "The renowned 'special ale' is copper coloured with a full premium quality flavour. A nutty richness derived from a blend of fine pale and crystal malts is balanced with a satisfying dryness from the unique use of three hops: Challenger, Goldings and Fuggles. The aroma has a hint of spirit which adds to the legendary mystique of this premium cask beer",
-    "image" : "brains.jpg"
+    "image" : "brainsSA.jpg"
 }, {
     "beerName": "1845",
     "brewery" : "Fullers Brewery",

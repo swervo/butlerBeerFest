@@ -8,7 +8,13 @@ var thisApp = (function() {
         $mainContainer = $("#mainContainer")
         $.getJSON("data/beers.json").success(function(aData) {
             $.each(aData, function(idx, aBeer){
-                var tile = $("<div class='beerTile'>" + aBeer.beerName + "</div>");
+                var tile = $("<div class='beerTile'></div>").css("background-image", "url(assets/" + aBeer.image + ")");
+                var beerName = $("<h3 class='title'>"+ aBeer.beerName +"</h3>");
+                var beerDetails = $("<p>" + aBeer.notes + "</p>")
+                
+                // tile.append(bottleShot);
+                tile.append(beerName);
+                tile.append(beerDetails);
                 $mainContainer.append(tile);
             });
             
