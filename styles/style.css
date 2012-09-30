@@ -9,6 +9,7 @@ html, body {
     padding: 0;
     border: 0;
     font-family: 'Open Sans', sans-serif;
+    -webkit-user-select: none;
 }
 
 html {
@@ -22,7 +23,8 @@ body {
 
 header {
     height: 10rem;
-    background-color: red;
+    background-color: white;
+    box-shadow: 0 0 10px 1px #666;
 }
 
 .mainContent {
@@ -39,6 +41,28 @@ header {
 nav {
     width: 20%;
     float: right;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    line-height: 2.5rem;
+}
+
+nav > ul {
+    background-color: #DDD;
+    padding: 1rem;
+}
+
+nav ul ul li {
+    -webkit-transition: background-color 0.3s linear;
+    padding-left: 1rem;
+    border-radius: 1rem;
+}
+
+nav ul ul li:hover {
+    background: #BBB;
 }
 
 .beerTile {
