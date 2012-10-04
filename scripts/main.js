@@ -1,11 +1,16 @@
 var thisApp = (function() {
     var thisApp = {};
     var DEBUG = true;
-    var $mainContainer;
+    var $mainContainer, $sortLinks;
     
     
     function init(args) {
-        $mainContainer = $("#mainContainer")
+        $mainContainer = $("#mainContainer");
+        
+        $sortLinks = $('#sortBy li').on("click", changeLayout);
+        
+        console.log($sortLinks);
+        
         $.getJSON("data/beers.json").success(function(aData) {
             $.each(aData, function(idx, aBeer){
                 var tile = $("<div class='beerTile'></div>").css("background-image", "url(assets/" + aBeer.image + ")");
@@ -28,10 +33,22 @@ var thisApp = (function() {
         });
     }
     
+    function changeLayout(e) {
+        console.log($(this).data());
+        $mainContainer.isotope({
+            sortBy: "name"
+        });
+    }
+    
     function initialiseLayout() {
         $mainContainer.isotope({
             itemSelector: ".beerTile",
-            layoutMode: "fitRows"
+            layoutMode: "fitRows",
+            getSortData : {
+                name : function ( $elem ) {
+                    return $elem.find('.title').text();
+                }
+            }
         });
     }
     

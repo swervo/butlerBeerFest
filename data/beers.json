@@ -70,4 +70,12 @@
     "strength": "5.7",
     "notes": "A rich, smooth brew with a softly spiced sweetness with dark liquorice notes and a fruity damson aroma. Poachers Choice is a gutsy ruby ale that is sweet, full bodied, malty & bitter",
     "image" : "poachersChoice.jpg"
+}, {
+    "beerName": "Holy Grail",
+    "brewery" : "Black Sheep Brewery",
+    "region"  : "Masham, North Yorkshire",
+    "beerType": "ruby",
+    "strength": "4.7",
+    "notes": "Ten years later on the 40th anniversary Holy Grail is still going strong. With more hops than a killer rabbit, it's a full-flavoured golden ale with a distinctively fruity flavour followed by the Black Sheep signature dry finish. Dangerously fruity against a biscuity malty background. Holy Grail doesn’t disappoint with its clean zesty flavour and long crisp bitter finish. Brewed with Maris Otter malt, an old and expensive variety that is renowned for the taste and the quality of the beer it produces.",
+    "image" : "holyGrailAle.jpg"
 }]

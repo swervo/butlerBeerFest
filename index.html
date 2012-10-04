@@ -17,17 +17,18 @@
                 <h2></h2>
                 <ul>
                     <li class="order">
-                        <h2 class="groupName">Order</h2>
-                        <ul>
-                            <li>Alpha descending</li>
-                            <li>Alpha ascending</li>
-                            <li>Strength descending</li>
-                            <li>Strength ascending</li>
+                        <h2 class="groupName">Sort</h2>
+                        <ul id="sortBy">
+                            <li data-option-value="alpha-descending">Alpha descending</li>
+                            <li data-option-value="alpha-ascending">Alpha ascending</li>
+                            <li data-option-value="strength-descending">Strength descending</li>
+                            <li data-option-value="strength-ascending">Strength ascending</li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="filter">
                         <h2 class="groupName">Types</h2>
-                        <ul>
+                        <ul id="filterBy">
+                            <li data-option-value="*" class="selected">All</li>
                             <li>Ale</li>
                             <li>Beer</li>
                             <li>Stout</li>
