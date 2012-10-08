@@ -24,7 +24,7 @@
     "image" : "hobgoblin.jpg"
 }, {
     "beerName": "Champion Ale",
-    "brewery" : "McEwans Brewery (Heineken)",
+    "brewery" : "McEwans Brewery",
     "region"  : "Edinburgh, Scotland",
     "beerType": "strong",
     "strength": "7.3",
@@ -76,6 +76,6 @@
     "region"  : "Masham, North Yorkshire",
     "beerType": "ruby",
     "strength": "4.7",
-    "notes": "Ten years later on the 40th anniversary Holy Grail is still going strong. With more hops than a killer rabbit, it's a full-flavoured golden ale with a distinctively fruity flavour followed by the Black Sheep signature dry finish. Dangerously fruity against a biscuity malty background. Holy Grail doesn’t disappoint with its clean zesty flavour and long crisp bitter finish. Brewed with Maris Otter malt, an old and expensive variety that is renowned for the taste and the quality of the beer it produces.",
+    "notes": "More hops than a killer rabbit, a full-flavoured golden ale with a distinctively fruity flavour followed by the Black Sheep signature dry finish. Dangerously fruity against a biscuity, Maris Otter, malty background. Holy Grail doesn’t disappoint with its clean zesty flavour and long crisp bitter finish.",
     "image" : "holyGrailAle.jpg"
 }]

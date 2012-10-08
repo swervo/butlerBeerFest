@@ -10,25 +10,22 @@ var thisApp = (function() {
         $sortLinks = $('#sortBy li').on("click", sortLayout);
         
         $.getJSON("data/beers.json").success(function(aData) {
+            // sort the data array alphabetically initially
             aData.sort(function(a, b){
-                if (a.beerName < b.beerName) {
-                    return -1;
-                }
-                if (a.beerName > b.beerName) {
-                    return 1;
-                }
-                
+                return (a.beerName < b.beerName) ? -1 : 1;
             });
             $.each(aData, function(idx, aBeer){
                 var tile = $("<div class='beerTile'></div>").css("background-image", "url(assets/" + aBeer.image + ")");
                 var beerName = $("<h3 class='title'>"+ aBeer.beerName +"</h3>");
                 var beerDetails = $("<p>" + aBeer.notes + "</p>");
                 var beerStrength = $("<span class='strength'>" + aBeer.strength + "%" + "</span>");
+                var brewer = $("<span class='brewer'>" + aBeer.brewery + "</span>");
                 
                 // tile.append(bottleShot);
                 tile.append(beerName);
                 tile.append(beerDetails);
                 tile.append(beerStrength);
+                tile.append(brewer);
                 $mainContainer.append(tile);
                 
             });
@@ -72,7 +69,6 @@ var thisApp = (function() {
                 strength: function($elem) {
                     return parseFloat($elem.find('.strength').text());
                 },
-                
             }
         });
     }
