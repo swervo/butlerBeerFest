@@ -7,9 +7,18 @@ var thisApp = (function() {
     function init(args) {
         $mainContainer = $("#mainContainer");
         
-        $sortLinks = $('#sortBy li').on("click", changeLayout);
+        $sortLinks = $('#sortBy li').on("click", sortLayout);
         
         $.getJSON("data/beers.json").success(function(aData) {
+            aData.sort(function(a, b){
+                if (a.beerName < b.beerName) {
+                    return -1;
+                }
+                if (a.beerName > b.beerName) {
+                    return 1;
+                }
+                
+            });
             $.each(aData, function(idx, aBeer){
                 var tile = $("<div class='beerTile'></div>").css("background-image", "url(assets/" + aBeer.image + ")");
                 var beerName = $("<h3 class='title'>"+ aBeer.beerName +"</h3>");
@@ -34,13 +43,18 @@ var thisApp = (function() {
         });
     }
     
-    function changeLayout(e) {
-        console.log($(this).data());
-        var nodeData = $(this).data();
-        var sortObj = {};
-        sortObj.sortBy = nodeData.optionValue;
-        sortObj.sortAscending = nodeData.ascending;
-        // $mainContainer.isotope(sortObj);
+    function sortLayout(e) {
+        var $this = $(this);
+        var nodeData = $this.data();
+        if ($this.hasClass("selected")) {
+            return false;
+        } else {
+            var $children = $this.parent().children();
+            $children.each(function(idx, aNode){
+                $(aNode).removeClass("selected");
+            });
+            $this.addClass("selected");
+        }
         $mainContainer.isotope({
             sortBy: nodeData.optionValue,
             sortAscending: nodeData.ascending
