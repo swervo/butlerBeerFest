@@ -1,7 +1,5 @@
 @import url("isotopeStyles.css");
 
-
-
 html, body {
     height: 100%;
     width: 100%;
@@ -65,19 +63,28 @@ nav ul ul li:hover {
     background: #BBB;
 }
 
+nav ul ul li.selected:after {
+    content: "•";
+    font-size: 3rem;
+    display: inline-block;
+    float: right;
+    margin-right: 1rem;
+}
+
 .beerTile {
     position: absolute;
     height: 300px;
-    width: 350px;
+    width: 300px;
     margin: 10px;
     background-color: white;
 /*    background-image: url("../assets/1845.jpg");*/
     background-repeat: no-repeat;
-    background-position: -50% 5%;
+    background-position: -80% 5%;
     box-shadow: 0 0 10px 1px #666;
+    font-size: 1.2rem;
 }
 
-h3 {
+.beerTile h3 {
     font-size: 2.5rem;
     color: #F01478;
     margin: 22px 0 5px 100px;
@@ -85,8 +92,13 @@ h3 {
     text-shadow: 0 0 2px rgba(240, 20, 120, 0.2);
 }
 
-p {
-    font-size: 1.2rem;
+.beerTile p {
     color: #999;
     margin: 0 10px 0 100px;
+}
+
+.beerTile span {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
 }
