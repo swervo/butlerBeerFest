@@ -1,5 +1,6 @@
 var thisApp = (function() {
     var thisApp = {};
+    var beerTiles = [];
     var DEBUG = true;
     var $mainContainer, $sortLinks;
     
@@ -21,7 +22,7 @@ var thisApp = (function() {
                 var beerStrength = $("<span class='strength'>" + aBeer.strength + "%" + "</span>");
                 var brewer = $("<span class='brewer'>" + aBeer.brewery + "</span>");
                 
-                // tile.append(bottleShot);
+                beerTiles.push(tile);
                 tile.append(beerName);
                 tile.append(beerDetails);
                 tile.append(beerStrength);
@@ -53,7 +54,11 @@ var thisApp = (function() {
             $this.addClass("selected");
         }
         if (nodeData.optionValue == "random") {
-            return (console.log("randomise"));
+            console.log(beerTiles);
+            beerTiles.forEach(function(tile, idx){
+                console.log(idx, tile);
+                tile.addClass("wobble");
+            })
             // add a random animation class to each element
             // find a number between 0 and n
             // filter on that element

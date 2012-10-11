@@ -3,14 +3,22 @@
 @import url("isotopeStyles.css");
 
 @-webkit-keyframes wobble {
-	0% {}
+	0% {
+      /*-webkit-transform: rotateZ(0deg);*/
+      opacity: 1;
+	}
 	33% {
-	    -webkit-transform: rotateZ(2deg);
+/*      -webkit-transform: rotateZ(2deg);*/
+        opacity: 0.5;
 	}
 	66% {
-	    -webkit-transform: rotateZ(-2deg);
+/*      -webkit-transform: rotateZ(-2deg);*/
+        opacity: 0.5;
 	}
-	100% {}
+	100% {
+/*      -webkit-transform: rotateZ(0deg);*/
+        opacity: 1;
+	}
 }
 
 html, body {
@@ -33,7 +41,7 @@ body {
 }
 
 .wobble {
-    -webkit-animation: wobble 0.5s linear infinite;
+    -webkit-animation: wobble 1s ease-in-out infinite;
 }
 
 header {
