@@ -2,6 +2,17 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url("isotopeStyles.css");
 
+@-webkit-keyframes wobble {
+	0% {}
+	33% {
+	    -webkit-transform: rotateZ(2deg);
+	}
+	66% {
+	    -webkit-transform: rotateZ(-2deg);
+	}
+	100% {}
+}
+
 html, body {
     height: 100%;
     width: 100%;
@@ -19,6 +30,10 @@ html {
 body {
     background: #EEE;
     color: #000;
+}
+
+.wobble {
+    -webkit-animation: wobble 0.5s linear infinite;
 }
 
 header {

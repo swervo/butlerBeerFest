@@ -52,6 +52,12 @@ var thisApp = (function() {
             });
             $this.addClass("selected");
         }
+        if (nodeData.optionValue == "random") {
+            return (console.log("randomise"));
+            // add a random animation class to each element
+            // find a number between 0 and n
+            // filter on that element
+        }
         $mainContainer.isotope({
             sortBy: nodeData.optionValue,
             sortAscending: nodeData.ascending
