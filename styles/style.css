@@ -41,7 +41,10 @@ body {
 }
 
 .wobble {
-    -webkit-animation: wobble 1s ease-in-out infinite;
+    /*-webkit-animation: wobble 1s ease-in-out infinite;*/
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
 }
 
 header {

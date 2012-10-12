@@ -56,12 +56,35 @@ var thisApp = (function() {
         if (nodeData.optionValue == "random") {
             console.log(beerTiles);
             beerTiles.forEach(function(tile, idx){
-                console.log(idx, tile);
+                var extantTransform = tile.css("webkitTransform");
+                // console.log(idx, tile);
                 tile.addClass("wobble");
-            })
+                // console.log(tile.css("webkitTransform"));
+                
+                var animName = "crossFade";
+                var lastSheet = document.styleSheets[document.styleSheets.length - 1];
+                
+                // lastSheet.insertRule("@-webkit-keyframes " + animName + " { 0% { opacity: 0.5; } 100% {opacity: 1;} }", lastSheet.cssRules.length);
+                
+                lastSheet.insertRule("@-webkit-keyframes " + animName + " { 0% { -webkit-transform: " + extantTransform + ";} 33% { -webkit-transform: " + extantTransform + "rotateZ(5deg);} 66% { -webkit-transform: " + extantTransform + "rotateZ(-5deg);} 100% { -webkit-transform: " + extantTransform + "; } }", lastSheet.cssRules.length);
+                
+                tile.css("webkitAnimationName", animName);
+                
+            });
+            
+            // var lastSheet = document.styleSheets[document.styleSheets.length - 1];
+            //             lastSheet.insertRule("@-webkit-keyframes " + newName + " { from { top: 0px; } to {top: " + newHeight + "px;} }", lastSheet.cssRules.length);
+            //             
+            //             element.style.webkitAnimationName = newName;
+            
+            // need to create a keyframe rule for each element
+            // where the keyframes contain the existing webkitTransform code
+            
             // add a random animation class to each element
             // find a number between 0 and n
             // filter on that element
+            
+            return false;
         }
         $mainContainer.isotope({
             sortBy: nodeData.optionValue,
