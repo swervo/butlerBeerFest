@@ -41,10 +41,9 @@ body {
 }
 
 .wobble {
-    /*-webkit-animation: wobble 1s ease-in-out infinite;*/
-    -webkit-animation-duration: 1s;
+    -webkit-animation-duration: 0.4s;
     -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease;
 }
 
 header {
@@ -120,6 +119,7 @@ nav ul ul li.selected:after {
     background-position: -80% 5%;
     box-shadow: 0 0 10px 1px #666;
     font-size: 1.2rem;
+    border-radius: 5px;
 }
 
 .beerTile h3 {

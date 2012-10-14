@@ -1,12 +1,42 @@
 var thisApp = (function() {
-    var thisApp = {};
+    var utils;
     var beerTiles = [];
     var DEBUG = true;
     var $mainContainer, $sortLinks;
     
+    utils = {
+        randomiseArray: function(anArray) {
+            for (var i = anArray.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = anArray[i];
+                anArray[i] = anArray[j];
+                anArray[j] = temp;
+            }
+            return anArray;
+        },
+        
+        randomPrimeArrayPick: function(){
+            var primeArray = this.randomiseArray([29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113]);
+            print(primeArray);
+            var primeIndex = -1;
+            return function() {
+                primeIndex += 1;
+                return (primeArray[primeIndex]);
+            }
+        },
+        
+        randomRange: function(aMin, aMax) {
+            return (Math.floor((Math.random() * (aMax - aMin))) + aMin);
+        },
+        
+        getPrimeCycle: undefined
+        
+    }
+    
     
     function init(args) {
         $mainContainer = $("#mainContainer");
+        utils.getPrimeCycle = utils.randomPrimeArrayPick();
         
         $sortLinks = $('#sortBy li').on("click", sortLayout);
         
@@ -44,6 +74,8 @@ var thisApp = (function() {
     function sortLayout(e) {
         var $this = $(this);
         var nodeData = $this.data();
+        var animName = "oscillate";
+        var lastSheet = document.styleSheets[document.styleSheets.length - 1];
         if ($this.hasClass("selected")) {
             return false;
         } else {
@@ -54,38 +86,37 @@ var thisApp = (function() {
             $this.addClass("selected");
         }
         if (nodeData.optionValue == "random") {
-            console.log(beerTiles);
             beerTiles.forEach(function(tile, idx){
                 var extantTransform = tile.css("webkitTransform");
-                // console.log(idx, tile);
                 tile.addClass("wobble");
-                // console.log(tile.css("webkitTransform"));
-                
-                var animName = "crossFade";
-                var lastSheet = document.styleSheets[document.styleSheets.length - 1];
-                
-                /*
-                    TODO 
-                    Remove the duplicate variables
-                    Randomise the timing function using primes
-                    Randomise the start of the animation
-                */
-                
-                lastSheet.insertRule("@-webkit-keyframes " + animName + " { 0% { -webkit-transform: " + extantTransform + ";} 33% { -webkit-transform: " + extantTransform + "rotateZ(5deg);} 66% { -webkit-transform: " + extantTransform + "rotateZ(-5deg);} 100% { -webkit-transform: " + extantTransform + "; } }", lastSheet.cssRules.length);
-                
+                lastSheet.insertRule("@-webkit-keyframes " + animName + " { 0% { -webkit-transform: " + extantTransform + ";} 33% { -webkit-transform: " + extantTransform + "rotateZ(3deg);} 66% { -webkit-transform: " + extantTransform + "rotateZ(-3deg);} 100% { -webkit-transform: " + extantTransform + "; } }", lastSheet.cssRules.length);
+                tile.css("webkitAnimationDuration", utils.getPrimeCycle() * 10 + "ms");
                 tile.css("webkitAnimationName", animName);
-                
             });
-            
-            // add a random animation class to each element
-            // find a number between 0 and n
-            // filter on that element
-            
+            setTimeout(showRandomSelection, 3000);
             return false;
         }
         $mainContainer.isotope({
             sortBy: nodeData.optionValue,
-            sortAscending: nodeData.ascending
+            sortAscending: nodeData.ascending,
+            filter: "*"
+        });
+    }
+    
+    function showRandomSelection() {
+        var chosenTile;
+        var chosenAle = utils.randomRange(0, beerTiles.length);
+        beerTiles.forEach(function(tile, idx){
+            tile.css("webkitAnimationName", "none");
+            tile.removeClass("wobble");
+            if (idx == chosenAle) {
+                chosenTile = tile.addClass("chosen");
+            }
+        });
+        $mainContainer.isotope({
+            filter: ".chosen"
+        }, function(){
+            chosenTile.removeClass("chosen");
         });
     }
     

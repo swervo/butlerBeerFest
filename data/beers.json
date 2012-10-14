@@ -78,4 +78,20 @@
     "strength": "4.7",
     "notes": "More hops than a killer rabbit, a full-flavoured golden ale with a distinctively fruity flavour followed by the Black Sheep signature dry finish. Dangerously fruity against a biscuity, Maris Otter, malty background. Holy Grail doesn’t disappoint with its clean zesty flavour and long crisp bitter finish.",
     "image" : "holyGrailAle.jpg"
+}, {
+    "beerName": "Guest ale 1",
+    "brewery" : "TBD",
+    "region"  : "??????????",
+    "beerType": "!!!!!",
+    "strength": "0.0",
+    "notes": "Yet to be reviewed",
+    "image" : "holyGrailAle.jpg"
+}, {
+    "beerName": "Guest ale 2",
+    "brewery" : "TBD",
+    "region"  : "??????????",
+    "beerType": "!!!!!",
+    "strength": "0.0",
+    "notes": "Wait and see",
+    "image" : "holyGrailAle.jpg"
 }]
