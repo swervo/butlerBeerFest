@@ -4,7 +4,7 @@ var thisApp = (function() {
     var DEBUG = true;
     var $mainContainer, $sortLinks;
     
-    utils = {
+    utils = ({
         randomiseArray: function(anArray) {
             for (var i = anArray.length - 1; i > 0; i--) {
                 var j = Math.floor(Math.random() * (i + 1));
@@ -29,14 +29,18 @@ var thisApp = (function() {
             return (Math.floor((Math.random() * (aMax - aMin))) + aMin);
         },
         
-        getPrimeCycle: undefined
+        init: function() {
+            this.randomPrimeArrayPick = this.randomPrimeArrayPick();
+            return this;
+        }
         
-    }
+        
+    }).init();
     
     
     function init(args) {
         $mainContainer = $("#mainContainer");
-        utils.getPrimeCycle = utils.randomPrimeArrayPick();
+        $choiceDialog = $("#choiceDialog");
         
         $sortLinks = $('#sortBy li').on("click", sortLayout);
         
@@ -90,7 +94,7 @@ var thisApp = (function() {
                 var extantTransform = tile.css("webkitTransform");
                 tile.addClass("wobble");
                 lastSheet.insertRule("@-webkit-keyframes " + animName + " { 0% { -webkit-transform: " + extantTransform + ";} 33% { -webkit-transform: " + extantTransform + "rotateZ(3deg);} 66% { -webkit-transform: " + extantTransform + "rotateZ(-3deg);} 100% { -webkit-transform: " + extantTransform + "; } }", lastSheet.cssRules.length);
-                tile.css("webkitAnimationDuration", utils.getPrimeCycle() * 10 + "ms");
+                tile.css("webkitAnimationDuration", utils.randomPrimeArrayPick() * 10 + "ms");
                 tile.css("webkitAnimationName", animName);
             });
             setTimeout(showRandomSelection, 3000);
@@ -117,6 +121,7 @@ var thisApp = (function() {
             filter: ".chosen"
         }, function(){
             chosenTile.removeClass("chosen");
+            $choiceDialog.css("display", "block");
         });
     }
     
