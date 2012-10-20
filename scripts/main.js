@@ -2,7 +2,7 @@ var thisApp = (function() {
     var utils;
     var beerTiles = [];
     var DEBUG = true;
-    var $mainContainer, $sortLinks;
+    var $mainContainer, $choiceDialog, $sortLinks;
     
     utils = ({
         randomiseArray: function(anArray) {
@@ -22,7 +22,7 @@ var thisApp = (function() {
             return function() {
                 primeIndex += 1;
                 return (primeArray[primeIndex]);
-            }
+            };
         },
         
         randomRange: function(aMin, aMax) {
@@ -38,7 +38,7 @@ var thisApp = (function() {
     }).init();
     
     
-    function init(args) {
+    function init() {
         $mainContainer = $("#mainContainer");
         $choiceDialog = $("#choiceDialog");
         
@@ -68,14 +68,14 @@ var thisApp = (function() {
             initialiseLayout();
         })
         .error(function() {
-             print("json load error"); 
+             print("json load error");
         })
         .complete(function() {
             print("data load done");
         });
     }
     
-    function sortLayout(e) {
+    function sortLayout() {
         var $this = $(this);
         var nodeData = $this.data();
         var animName = "oscillate";
@@ -89,8 +89,8 @@ var thisApp = (function() {
             });
             $this.addClass("selected");
         }
-        if (nodeData.optionValue == "random") {
-            beerTiles.forEach(function(tile, idx){
+        if (nodeData.optionValue === "random") {
+            beerTiles.forEach(function(tile){
                 var extantTransform = tile.css("webkitTransform");
                 tile.addClass("wobble");
                 lastSheet.insertRule("@-webkit-keyframes " + animName + " { 0% { -webkit-transform: " + extantTransform + ";} 33% { -webkit-transform: " + extantTransform + "rotateZ(3deg);} 66% { -webkit-transform: " + extantTransform + "rotateZ(-3deg);} 100% { -webkit-transform: " + extantTransform + "; } }", lastSheet.cssRules.length);
@@ -113,7 +113,7 @@ var thisApp = (function() {
         beerTiles.forEach(function(tile, idx){
             tile.css("webkitAnimationName", "none");
             tile.removeClass("wobble");
-            if (idx == chosenAle) {
+            if (idx === chosenAle) {
                 chosenTile = tile.addClass("chosen");
             }
         });
@@ -126,6 +126,7 @@ var thisApp = (function() {
     }
     
     function initialiseLayout() {
+        print("init");
         $mainContainer.isotope({
             itemSelector: ".beerTile",
             layoutMode: "fitRows",
@@ -135,7 +136,7 @@ var thisApp = (function() {
                 },
                 strength: function($elem) {
                     return parseFloat($elem.find('.strength').text());
-                },
+                }
             }
         });
     }
@@ -154,11 +155,11 @@ var thisApp = (function() {
             init();
         },
         
-        reset: function(args) {
+        reset: function() {
             
         }
-    }
-})()
+    };
+})();
 
 
 

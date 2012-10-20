@@ -18,7 +18,8 @@ html {
 }
 
 body {
-    background: #EEE;
+/*    background: #EEE url("assets/farmer.png");*/
+    background: #FFB6C1 url("assets/100-90-4.png");
     color: #000;
 }
 
@@ -31,10 +32,11 @@ body {
 header {
     height: 10rem;
     border-bottom: 1rem solid black;
-    background-color: white;
+    background: #FFFFE0 url("assets/100-90-4.png");
     box-shadow: 0 0 10px 1px #666;
     font: 7rem 'Nothing You Could Do', cursive;
     text-align: center;
+    text-shadow: 0 1px 0 #FFF;
 }
 
 .mainContent {
@@ -61,23 +63,27 @@ nav ul {
 }
 
 nav > ul {
-    background-color: #DDD;
     padding: 1rem;
+    border: 1px solid #333;
+    box-shadow: 1px 1px 0 #EEE, inset 1px 1px 0 #EEE;
 }
 
 nav ul ul li {
     -webkit-transition: background-color 0.3s linear;
     padding-left: 1rem;
     border-radius: 1rem;
+    text-shadow: 0 1px 0 #EEE;
 }
 
 nav ul ul li:hover {
     background-color: #BBB;
+    
 }
 
 nav ul ul li.selected {
     background-color: firebrick;
     color: #CCC;
+    text-shadow: none;
 }
 
 nav ul ul li.selected:after {
@@ -99,7 +105,7 @@ nav ul ul li.selected:after {
     background-color: white;
     background-repeat: no-repeat;
     background-position: -80% 5%;
-    box-shadow: 0 0 10px 1px #666;
+    box-shadow: 0 0 7px 0 #666;
     font-size: 1.2rem;
     border-radius: 5px;
 }
@@ -138,4 +144,5 @@ nav ul ul li.selected:after {
     display: none;
     font-family: 'Luckiest Guy', cursive;
     font-size: 5rem;
+    text-shadow: 0 1px 0px #FFF;
 }
