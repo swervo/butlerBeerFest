@@ -1,7 +1,13 @@
-@import url(http://fonts.googleapis.com/css?family=Nothing+You+Could+Do&text=1stButlerBeerFestival2012);
+@import url(http://fonts.googleapis.com/css?family=Nothing+You+Could+Do&text=1stBulerFiva2012HA);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
-@import url(http://fonts.googleapis.com/css?family=Luckiest+Guy&text=Isthisthealeyourelookingfor?);
+@import url(http://fonts.googleapis.com/css?family=Luckiest+Guy&text=Isthiealyurokngf?!,BmYN);
 @import url("isotopeStyles.css");
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
 html, body {
     height: 100%;
@@ -18,9 +24,24 @@ html {
 }
 
 body {
-/*    background: #EEE url("assets/farmer.png");*/
     background: #FFB6C1 url("assets/100-90-4.png");
     color: #000;
+}
+
+a:link {
+    color:#FF0000;
+    text-decoration: none;
+}
+a:visited {
+    color:#00FF00;
+}
+a:hover {
+    color:#FF00FF;
+    text-decoration: underline;
+}
+a:active {
+    color:#0000FF;
+    text-decoration: underline;
 }
 
 .wobble {
@@ -31,12 +52,25 @@ body {
 
 header {
     height: 10rem;
-    border-bottom: 1rem solid black;
+    border-bottom: 3rem solid black;
     background: #FFFFE0 url("assets/100-90-4.png");
-    box-shadow: 0 0 10px 1px #666;
     font: 7rem 'Nothing You Could Do', cursive;
     text-align: center;
     text-shadow: 0 1px 0 #FFF;
+}
+
+header nav {
+    position: absolute;
+    top: 100px;
+    left: 35px;
+    font-size: 1.8rem;
+    color: white;
+    text-shadow: none;
+}
+
+header nav span {
+    display: inline-block;
+    margin-right: 20px;
 }
 
 .mainContent {
@@ -46,47 +80,53 @@ header {
     margin: 0 auto;
 }
 
+.mainContent .view {
+    visibility: hidden;
+}
+
+.mainContent .view.selected {
+    visibility: visible;
+}
+
 .mainContainer {
     width: 80%;
 }
 
-nav {
-    width: 20%;
+.ales nav {
     float: right;
+    width: 20%;
+    margin-top: 1.5rem;
     text-transform: uppercase;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    line-height: 2.5rem;
-}
-
-nav > ul {
+.ales nav div {
     padding: 1rem;
     border: 1px solid #333;
     box-shadow: 1px 1px 0 #EEE, inset 1px 1px 0 #EEE;
 }
 
-nav ul ul li {
+.ales nav ul {
+    line-height: 2.5rem;
+}
+
+.ales nav ul li {
     -webkit-transition: background-color 0.3s linear;
     padding-left: 1rem;
     border-radius: 1rem;
     text-shadow: 0 1px 0 #EEE;
 }
 
-nav ul ul li:hover {
+.ales nav ul li:hover {
     background-color: #BBB;
-    
 }
 
-nav ul ul li.selected {
+.ales nav ul li.selected {
     background-color: firebrick;
     color: #CCC;
     text-shadow: none;
 }
 
-nav ul ul li.selected:after {
+.ales nav ul li.selected:after {
     display: inline-block;
     float: right;
     margin-right: 1rem;
@@ -131,6 +171,7 @@ nav ul ul li.selected:after {
 
 .beerTile span {
     position: absolute;
+    color: #757575;
     right: 10px;
     bottom: 10px;
 }
@@ -138,11 +179,42 @@ nav ul ul li.selected:after {
 .choiceDialog {
     position: absolute;
     height: 40%;
-    width: 43%;
-    top: 10px;
+    width: 40%;
+    top: 35px;
     left: 360px;
-    display: none;
     font-family: 'Luckiest Guy', cursive;
     font-size: 5rem;
     text-shadow: 0 1px 0px #FFF;
+    line-height: 6rem;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+}
+
+.choiceDialog span {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.choiceDialog ul li {
+    display: inline-block;
+    height: 40%;
+    width: 45%;
+    padding-top: 10px;
+    font-size: 3rem;
+    line-height: 3rem;
+    border: 1px solid darkgrey;
+    text-align: center;
+    background-color: darksalmon;
+    box-shadow: 0px 1px 0 #EEE, inset 0 1px 3px #EEE;
+}
+
+.choiceDialog ul li:first-child {
+    float: left;
+}
+
+.choiceDialog ul li:last-child {
+    float: right;
+    background-color: darkseagreen;
 }

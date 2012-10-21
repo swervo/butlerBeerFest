@@ -2,7 +2,8 @@ var thisApp = (function() {
     var utils;
     var beerTiles = [];
     var DEBUG = true;
-    var $mainContainer, $choiceDialog, $sortLinks;
+    var lastSheet = document.styleSheets[document.styleSheets.length - 1];
+    var $mainContainer, $choiceDialog, $sortLinks, $dialogButtons, $navLinks;
     
     utils = ({
         randomiseArray: function(anArray) {
@@ -33,15 +34,14 @@ var thisApp = (function() {
             this.randomPrimeArrayPick = this.randomPrimeArrayPick();
             return this;
         }
-        
-        
     }).init();
     
     
     function init() {
         $mainContainer = $("#mainContainer");
         $choiceDialog = $("#choiceDialog");
-        
+        $navLinks = $(".mainNav a").on("click", switchPage);
+        $dialogButtons = $(".buttons li").on("click", dialogAction);
         $sortLinks = $('#sortBy li').on("click", sortLayout);
         
         $.getJSON("data/beers.json").success(function(aData) {
@@ -75,11 +75,49 @@ var thisApp = (function() {
         });
     }
     
+    function switchPage() {
+        var $this = $(this);
+        var targetPage = $this.data().target;
+        print(targetPage);
+        if ($this.hasClass("selected")) {
+            return false;
+        } else {
+            var $children = $this.parent().children();
+            $children.each(function(idx, aNode){
+                $(aNode).removeClass("selected");
+            });
+            $this.addClass("selected");
+        }
+        $(".view").toggleClass("selected");
+    }
+    
+    function dialogAction(e) {
+        var animName = "oscillate";
+        if (e.target.id === "tryAgain") {
+            $choiceDialog.css("opacity", "0");
+            $mainContainer.isotope({
+                filter: "*"
+            }, doAnimation);
+        } else {
+            // play the beer animation
+        }
+    }
+    
+    function doAnimation() {
+        var animName = "oscillate"
+        beerTiles.forEach(function(tile, idx){
+            var extantTransform = tile.css("webkitTransform");
+            tile.addClass("wobble");
+            lastSheet.insertRule("@-webkit-keyframes " + animName + " { 0% { -webkit-transform: " + extantTransform + ";} 33% { -webkit-transform: " + extantTransform + "rotateZ(3deg);} 66% { -webkit-transform: " + extantTransform + "rotateZ(-3deg);} 100% { -webkit-transform: " + extantTransform + "; } }", lastSheet.cssRules.length);
+            tile.css("webkitAnimationDuration", utils.randomPrimeArrayPick() * 10 + "ms");
+            tile.css("webkitAnimationName", animName);
+        });
+        setTimeout(showRandomSelection, 3000);
+    }
+    
     function sortLayout() {
         var $this = $(this);
         var nodeData = $this.data();
-        var animName = "oscillate";
-        var lastSheet = document.styleSheets[document.styleSheets.length - 1];
         if ($this.hasClass("selected")) {
             return false;
         } else {
@@ -90,21 +128,18 @@ var thisApp = (function() {
             $this.addClass("selected");
         }
         if (nodeData.optionValue === "random") {
-            beerTiles.forEach(function(tile){
-                var extantTransform = tile.css("webkitTransform");
-                tile.addClass("wobble");
-                lastSheet.insertRule("@-webkit-keyframes " + animName + " { 0% { -webkit-transform: " + extantTransform + ";} 33% { -webkit-transform: " + extantTransform + "rotateZ(3deg);} 66% { -webkit-transform: " + extantTransform + "rotateZ(-3deg);} 100% { -webkit-transform: " + extantTransform + "; } }", lastSheet.cssRules.length);
-                tile.css("webkitAnimationDuration", utils.randomPrimeArrayPick() * 10 + "ms");
-                tile.css("webkitAnimationName", animName);
-            });
-            setTimeout(showRandomSelection, 3000);
+            doAnimation();
             return false;
+        } else {
+            // hide the dialog
+            $choiceDialog.css("opacity", "0");
+            $mainContainer.isotope({
+                sortBy: nodeData.optionValue,
+                sortAscending: nodeData.ascending,
+                filter: "*"
+            });
         }
-        $mainContainer.isotope({
-            sortBy: nodeData.optionValue,
-            sortAscending: nodeData.ascending,
-            filter: "*"
-        });
+        
     }
     
     function showRandomSelection() {
@@ -121,7 +156,9 @@ var thisApp = (function() {
             filter: ".chosen"
         }, function(){
             chosenTile.removeClass("chosen");
-            $choiceDialog.css("display", "block");
+            setTimeout(function() {
+                $choiceDialog.css("opacity", "1");
+            }, 0);
         });
     }
     
