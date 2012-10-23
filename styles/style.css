@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Nothing+You+Could+Do&text=1stBulerFiva2012HA);
+@import url(http://fonts.googleapis.com/css?family=Nothing+You+Could+Do&text=1stBulerFiva2012HASocmngdby);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Luckiest+Guy&text=Isthiealyurokngf?!,BmYN);
 @import url("isotopeStyles.css");
@@ -29,19 +29,17 @@ body {
 }
 
 a:link {
-    color:#FF0000;
+    color: slateblue;
     text-decoration: none;
 }
-a:visited {
-    color:#00FF00;
-}
 a:hover {
-    color:#FF00FF;
-    text-decoration: underline;
+    color:#FFF;
+    text-decoration: none;
+    text-shadow: none;
 }
-a:active {
-    color:#0000FF;
-    text-decoration: underline;
+
+a.selected {
+    color: #FFF;
 }
 
 .wobble {
@@ -54,15 +52,17 @@ header {
     height: 10rem;
     border-bottom: 3rem solid black;
     background: #FFFFE0 url("assets/100-90-4.png");
-    font: 7rem 'Nothing You Could Do', cursive;
+    font: 6rem 'Nothing You Could Do', cursive;
     text-align: center;
     text-shadow: 0 1px 0 #FFF;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 header nav {
     position: absolute;
     top: 100px;
-    left: 35px;
+    left: 10%;
     font-size: 1.8rem;
     color: white;
     text-shadow: none;
@@ -81,15 +81,48 @@ header nav span {
 }
 
 .mainContent .view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     visibility: hidden;
+    display: none;
 }
 
 .mainContent .view.selected {
     visibility: visible;
+    display: block;
 }
 
 .mainContainer {
     width: 80%;
+}
+
+.home {
+    font-size: 1.6rem;
+    text-shadow: 0 1px 0 #FFF;
+    padding: 0 10%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.home h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 40px 0 25px 0;
+}
+
+.home h2 {
+    font-size: 2rem;
+    margin: 30px 0 10px 0;
+}
+
+.home p:last-child {
+    margin-top: 60px;
+    font: 6rem 'Nothing You Could Do', cursive;
+    text-align: center;
 }
 
 .ales nav {

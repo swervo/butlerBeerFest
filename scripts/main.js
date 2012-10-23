@@ -88,7 +88,11 @@ var thisApp = (function() {
             });
             $this.addClass("selected");
         }
+        
         $(".view").toggleClass("selected");
+        // HACK
+        // do the isotope relayout thing
+        $mainContainer.isotope("reLayout");
     }
     
     function dialogAction(e) {
