@@ -1,9 +1,9 @@
 var thisApp = (function() {
     var utils;
     var beerTiles = [];
-    var DEBUG = true;
+    var DEBUG = false;
     var lastSheet = document.styleSheets[document.styleSheets.length - 1];
-    var $mainContainer, $choiceDialog, $sortLinks, $dialogButtons, $navLinks;
+    var $mainContainer, chosenTile, $choiceDialog, $sortLinks, $dialogButtons, $navLinks;
     
     utils = ({
         randomiseArray: function(anArray) {
@@ -40,8 +40,10 @@ var thisApp = (function() {
     function init() {
         $mainContainer = $("#mainContainer");
         $choiceDialog = $("#choiceDialog");
+        $serving = $("#serving");
         $navLinks = $(".mainNav a").on("click", switchPage);
         $dialogButtons = $(".buttons li").on("click", dialogAction);
+        $cheersButton = $("#cheers").on("click", resetView);
         $sortLinks = $('#sortBy li').on("click", sortLayout);
         
         $.getJSON("data/beers.json").success(function(aData) {
@@ -96,15 +98,36 @@ var thisApp = (function() {
     }
     
     function dialogAction(e) {
-        var animName = "oscillate";
         if (e.target.id === "tryAgain") {
             $choiceDialog.css("opacity", "0");
             $mainContainer.isotope({
                 filter: "*"
             }, doAnimation);
         } else {
-            // play the beer animation
+            // hide the dialog show the serving acknowlegement
+            $serving.removeClass("hidden");
+            $choiceDialog.css("opacity", "0");
+            setTimeout(function(){
+                $serving.css("opacity", "1");
+            }, 0)
+            chosenTile.css({webkitTransitionDuration: "2000ms", webkitTransform: "translate3d(2000px, 0px, 0px)"});
         }
+    }
+    
+    function resetView() {
+        // hide the cheers dialog
+        $serving.on("webkitTransitionEnd", function() {
+            $(this).addClass("hidden").off("webkitTransitionEnd").css("opacity", "");
+            chosenTile.css({webkitTransitionDuration: "", webkitTransform: ""});
+            $mainContainer.isotope({
+                filter: "*"
+            }, function(){
+                // remove selection
+                $sortLinks.removeClass("selected");
+                // set the selection to alpha
+                $sortLinks.first().addClass("selected");
+            });
+        }).css("opacity", "0");
     }
     
     function doAnimation() {
@@ -143,11 +166,10 @@ var thisApp = (function() {
                 filter: "*"
             });
         }
-        
     }
     
     function showRandomSelection() {
-        var chosenTile;
+        // var chosenTile;
         var chosenAle = utils.randomRange(0, beerTiles.length);
         beerTiles.forEach(function(tile, idx){
             tile.css("webkitAnimationName", "none");
