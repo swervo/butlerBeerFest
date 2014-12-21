@@ -1,9 +1,12 @@
+"use strict";
+
 var thisApp = (function() {
     var utils;
     var beerTiles = [];
     var DEBUG = false;
     var lastSheet = document.styleSheets[document.styleSheets.length - 1];
-    var $mainContainer, chosenTile, $choiceDialog, $sortLinks, $dialogButtons, $navLinks;
+    var $mainContainer, chosenTile, $choiceDialog, $sortLinks,
+        $serving, $dialogButtons, $cheersButton, $navLinks;
     
     utils = ({
         randomiseArray: function(anArray) {
@@ -17,7 +20,9 @@ var thisApp = (function() {
         },
         
         randomPrimeArrayPick: function(){
-            var primeArray = this.randomiseArray([29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113]);
+            var primeArray = this.randomiseArray([
+                29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113
+            ]);
             print(primeArray);
             var primeIndex = -1;
             return function() {
@@ -44,7 +49,7 @@ var thisApp = (function() {
         $navLinks = $(".mainNav a").on("click", switchPage);
         $dialogButtons = $(".buttons li").on("click", dialogAction);
         $cheersButton = $("#cheers").on("click", resetView);
-        $sortLinks = $('#sortBy li').on("click", sortLayout);
+        $sortLinks = $("#sortBy li").on("click", sortLayout);
         
         $.getJSON("data/beers.json").success(function(aData) {
             // sort the data array alphabetically initially
@@ -52,7 +57,10 @@ var thisApp = (function() {
                 return (a.beerName < b.beerName) ? -1 : 1;
             });
             $.each(aData, function(idx, aBeer){
-                var tile = $("<div class='beerTile'></div>").css("background-image", "url(assets/" + aBeer.image + ")");
+                var tile = $("<div class='beerTile'></div>").css(
+                    "background-image",
+                    "url(assets/" + aBeer.image + ")"
+                );
                 var beerName = $("<h3 class='title'>"+ aBeer.beerName +"</h3>");
                 var beerDetails = $("<p>" + aBeer.notes + "</p>");
                 var beerStrength = $("<span class='strength'>" + aBeer.strength + "%" + "</span>");
@@ -70,7 +78,7 @@ var thisApp = (function() {
             initialiseLayout();
         })
         .error(function() {
-             print("json load error");
+            print("json load error");
         })
         .complete(function() {
             print("data load done");
@@ -109,8 +117,11 @@ var thisApp = (function() {
             $choiceDialog.css("opacity", "0");
             setTimeout(function(){
                 $serving.css("opacity", "1");
-            }, 0)
-            chosenTile.css({webkitTransitionDuration: "2000ms", webkitTransform: "translate3d(2000px, 0px, 0px)"});
+            }, 0);
+            chosenTile.css({
+                webkitTransitionDuration: "2000ms",
+                webkitTransform: "translate3d(2000px, 0px, 0px)"
+            });
         }
     }
     
@@ -131,11 +142,15 @@ var thisApp = (function() {
     }
     
     function doAnimation() {
-        var animName = "oscillate"
-        beerTiles.forEach(function(tile, idx){
+        var animName = "oscillate";
+        beerTiles.forEach(function(tile){
             var extantTransform = tile.css("webkitTransform");
             tile.addClass("wobble");
-            lastSheet.insertRule("@-webkit-keyframes " + animName + " { 0% { -webkit-transform: " + extantTransform + ";} 33% { -webkit-transform: " + extantTransform + "rotateZ(3deg);} 66% { -webkit-transform: " + extantTransform + "rotateZ(-3deg);} 100% { -webkit-transform: " + extantTransform + "; } }", lastSheet.cssRules.length);
+            lastSheet.insertRule("@-webkit-keyframes " + animName + " { 0% { -webkit-transform: "
+                + extantTransform + ";} 33% { -webkit-transform: "
+                + extantTransform + "rotateZ(3deg);} 66% { -webkit-transform: "
+                + extantTransform + "rotateZ(-3deg);} 100% { -webkit-transform: "
+                + extantTransform + "; } }", lastSheet.cssRules.length);
             tile.css("webkitAnimationDuration", utils.randomPrimeArrayPick() * 10 + "ms");
             tile.css("webkitAnimationName", animName);
         });
@@ -195,10 +210,10 @@ var thisApp = (function() {
             layoutMode: "fitRows",
             getSortData: {
                 name: function ($elem) {
-                    return $elem.find('.title').text();
+                    return $elem.find(".title").text();
                 },
                 strength: function($elem) {
-                    return parseFloat($elem.find('.strength').text());
+                    return parseFloat($elem.find(".strength").text());
                 }
             }
         });
@@ -211,8 +226,6 @@ var thisApp = (function() {
         
     }
     
-    
-    
     return {
         init: function() {
             init();
@@ -223,8 +236,6 @@ var thisApp = (function() {
         }
     };
 })();
-
-
 
 $("document").ready(function(){
     thisApp.init();
