@@ -110,7 +110,10 @@ var thisApp = (function() {
             $choiceDialog.css("opacity", "0");
             $mainContainer.isotope({
                 filter: "*"
-            }, doAnimation);
+            });
+            setTimeout(function() {
+                doAnimation();
+            }, 800);
         } else {
             // hide the dialog show the serving acknowlegement
             $serving.removeClass("hidden");
@@ -184,6 +187,12 @@ var thisApp = (function() {
     }
     
     function showRandomSelection() {
+        function showDialog () {
+            chosenTile.removeClass("chosen");
+            setTimeout(function() {
+                $choiceDialog.css("opacity", "1");
+            }, 0);
+        }
         // var chosenTile;
         var chosenAle = utils.randomRange(0, beerTiles.length);
         beerTiles.forEach(function(tile, idx){
@@ -195,12 +204,12 @@ var thisApp = (function() {
         });
         $mainContainer.isotope({
             filter: ".chosen"
-        }, function(){
-            chosenTile.removeClass("chosen");
-            setTimeout(function() {
-                $choiceDialog.css("opacity", "1");
-            }, 0);
-        });
+        }, showDialog);
+        // HACK //
+        // As the isotope callbacks are no longer being fired
+        // Set a timeout instead
+        // (800 being the transition time in isotopeStyles.css)
+        setTimeout(showDialog, 800);
     }
     
     function initialiseLayout() {
