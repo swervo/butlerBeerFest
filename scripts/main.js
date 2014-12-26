@@ -5,7 +5,7 @@ var thisApp = (function() {
     var beerTiles = [];
     var DEBUG = false;
     var lastSheet = document.styleSheets[document.styleSheets.length - 1];
-    var $mainContainer, chosenTile, $choiceDialog, $sortLinks,
+    var $mainContainer, chosenTile, $choiceDialog, $sort, $sortLinks,
         $serving, $dialogButtons, $cheersButton, $navLinks;
     
     utils = ({
@@ -46,10 +46,12 @@ var thisApp = (function() {
         $mainContainer = $("#mainContainer");
         $choiceDialog = $("#choiceDialog");
         $serving = $("#serving");
-        $navLinks = $(".mainNav a").on("click", switchPage);
-        $dialogButtons = $(".buttons li").on("click", dialogAction);
-        $cheersButton = $("#cheers").on("click", resetView);
-        $sortLinks = $("#sortBy li").on("click", sortLayout);
+        $navLinks = $("#mainNav").on("click", ".js-navItem", switchPage);
+        $dialogButtons = $("button", $choiceDialog).on("click", dialogAction);
+        $cheersButton = $("#cheers", $serving).on("click", resetView);
+        $sort = $("#sortBy").on("click", ".js-navItem", sortLayout);
+        $sortLinks = $(".js-navItem", $sort);
+
         
         $.getJSON("data/beers.json").success(function(aData) {
             // sort the data array alphabetically initially
@@ -57,14 +59,14 @@ var thisApp = (function() {
                 return (a.beerName < b.beerName) ? -1 : 1;
             });
             $.each(aData, function(idx, aBeer){
-                var tile = $("<div class='beerTile'></div>").css(
+                var tile = $("<div class='BeerTile'></div>").css(
                     "background-image",
                     "url(assets/" + aBeer.image + ")"
                 );
-                var beerName = $("<h3 class='title'>"+ aBeer.beerName +"</h3>");
-                var beerDetails = $("<p>" + aBeer.notes + "</p>");
-                var beerStrength = $("<span class='strength'>" + aBeer.strength + "%" + "</span>");
-                var brewer = $("<span class='brewer'>" + aBeer.brewery + "</span>");
+                var beerName = $("<div class='BeerTile--title'>"+ aBeer.beerName +"</div>");
+                var beerDetails = $("<p class='BeerTile--notes'>" + aBeer.notes + "</p>");
+                var beerStrength = $("<span class='BeerTile--strength'>" + aBeer.strength + "%" + "</span>");
+                var brewer = $("<span class='BeerTile--brewer'>" + aBeer.brewery + "</span>");
                 
                 beerTiles.push(tile);
                 tile.append(beerName);
@@ -129,18 +131,24 @@ var thisApp = (function() {
     }
     
     function resetView() {
+        function resetNav() {
+            // remove selection
+            $sortLinks.removeClass("selected");
+            // set the selection to alpha
+            $sortLinks.first().addClass("selected");
+        }
         // hide the cheers dialog
         $serving.on("webkitTransitionEnd", function() {
             $(this).addClass("hidden").off("webkitTransitionEnd").css("opacity", "");
             chosenTile.css({webkitTransitionDuration: "", webkitTransform: ""});
             $mainContainer.isotope({
                 filter: "*"
-            }, function(){
-                // remove selection
-                $sortLinks.removeClass("selected");
-                // set the selection to alpha
-                $sortLinks.first().addClass("selected");
-            });
+            }, resetNav);
+            // reset the navigation if the isotope callback (above) doesn't fire
+            // this is a hack until the issues with isotope are resolved.
+            setTimeout(function() {
+                resetNav();
+            }, 500);
         }).css("opacity", "0");
     }
     
@@ -215,14 +223,14 @@ var thisApp = (function() {
     function initialiseLayout() {
         print("init");
         $mainContainer.isotope({
-            itemSelector: ".beerTile",
+            itemSelector: ".BeerTile",
             layoutMode: "fitRows",
             getSortData: {
                 name: function ($elem) {
-                    return $elem.find(".title").text();
+                    return $elem.find(".BeerTile--title").text();
                 },
                 strength: function($elem) {
-                    return parseFloat($elem.find(".strength").text());
+                    return parseFloat($elem.find(".BeerTile--strength").text());
                 }
             }
         });

@@ -3,21 +3,11 @@
 @import url(http://fonts.googleapis.com/css?family=Luckiest+Guy&text=Isthiealyurokngf?!,BmYNCp);
 @import url("isotopeStyles.css");
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
 
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
+
+html, body, ul {
     padding: 0;
-    border: 0;
-    font-family: 'Open Sans', sans-serif;
-    -webkit-user-select: none;
-    -moz-user-select: none;
+    margin: 0;
 }
 
 html {
@@ -25,14 +15,22 @@ html {
 }
 
 body {
+    height: 100%;
+    width: 100%;
+    min-width: 1000px;
     background: #FFB6C1 url("assets/100-90-4.png");
     color: #000;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
-a:link {
+a:link,
+a:visited {
     color: slateblue;
     text-decoration: none;
 }
+
 a:hover {
     color:#FFF;
     text-decoration: none;
@@ -41,6 +39,21 @@ a:hover {
 
 a.selected {
     color: #FFF;
+}
+
+h1 {
+    margin: 40px 0 25px 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    margin: 30px 0 10px 0;
+    font-size: 2rem;
+}
+
+ul {
+    list-style: none;
 }
 
 .hidden {
@@ -64,17 +77,15 @@ header {
     overflow: hidden;
 }
 
-header nav {
+.MainNav {
     position: absolute;
     top: 100px;
     left: 10%;
     font-size: 1.8rem;
-    color: white;
     text-shadow: none;
 }
 
-header nav span {
-    display: inline-block;
+.MainNav--item {
     margin-right: 20px;
 }
 
@@ -85,43 +96,28 @@ header nav span {
     margin: 0 auto;
 }
 
-.mainContent .view {
+.mainContainer {
+    width: 80%;
+}
+
+.view {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     visibility: hidden;
-    display: none;
 }
 
-.mainContent .view.selected {
+.view.selected {
     visibility: visible;
-    display: block;
-}
-
-.mainContainer {
-    width: 80%;
 }
 
 .home {
     font-size: 1.6rem;
     text-shadow: 0 1px 0 #FFF;
     padding: 0 10%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
-}
-
-.home h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 40px 0 25px 0;
-}
-
-.home h2 {
-    font-size: 2rem;
-    margin: 30px 0 10px 0;
 }
 
 .home p:last-child {
@@ -130,136 +126,117 @@ header nav span {
     text-align: center;
 }
 
-.ales nav {
-    float: right;
+.AlesNav {
     width: 20%;
     margin-top: 1.5rem;
     text-transform: uppercase;
+    float: right;
 }
 
-.ales nav div {
+.AlesNav--items {
     padding: 1rem;
-    border: 1px solid #333;
     box-shadow: 1px 1px 0 #EEE, inset 1px 1px 0 #EEE;
+    border: 1px solid #333;
 }
 
-.ales nav ul {
-    line-height: 2.5rem;
-}
-
-.ales nav ul li {
-    -webkit-transition: background-color 0.3s linear;
-    -moz-transition: background-color 0.3s linear;
+.AlesNav--item {
     padding-left: 1rem;
     border-radius: 1rem;
+    line-height: 2.5rem;
     text-shadow: 0 1px 0 #EEE;
+    -webkit-transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
 }
 
-.ales nav ul li:hover {
+.AlesNav--item:hover {
     background-color: #BBB;
+    cursor: pointer;
 }
 
-.ales nav ul li.selected {
+.AlesNav--item.selected {
     background-color: firebrick;
     color: #CCC;
     text-shadow: none;
 }
 
-.ales nav ul li.selected:after {
+.AlesNav--item.selected:after {
     display: inline-block;
-    float: right;
     margin-right: 1rem;
     content: " ☜";
     font-size: 3rem;
     color: #FFF;
-
+    float: right;
 }
 
-.beerTile {
+.BeerTile {
     position: absolute;
     height: 300px;
     width: 300px;
-    border: 5px solid #000;
     margin: 10px;
+    box-shadow: 0 0 7px 0 #666;
+    border: 5px solid #000;
+    border-radius: 5px;
     background-color: white;
     background-repeat: no-repeat;
     background-position: -80% 5%;
-    box-shadow: 0 0 7px 0 #666;
     font-size: 1.2rem;
-    border-radius: 5px;
 }
 
-.beerTile h3 {
+.BeerTile--title {
+    margin: 22px 0 5px 100px;
     font-size: 2.5rem;
     color: #F01478;
-    margin: 22px 0 5px 100px;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     text-shadow: 0 0 2px rgba(240, 20, 120, 0.2);
 }
 
-.beerTile p {
-    color: #999;
+.BeerTile--notes {
     margin: 0 10px 0 100px;
+    color: #999;
 }
 
-.beerTile .brewer {
+.BeerTile--brewer {
     position: absolute;
     left: 10px;
     bottom: 10px;
 }
 
-.beerTile span {
+.BeerTile--strength {
     position: absolute;
-    color: #757575;
     right: 10px;
     bottom: 10px;
+    color: #757575;
 }
 
-.choiceDialog, .serving {
+.Dialog {
     position: absolute;
     height: 40%;
     width: 40%;
     top: 35px;
     left: 360px;
-    font-family: 'Luckiest Guy', cursive;
-    font-size: 5rem;
-    text-shadow: 0 1px 0px #FFF;
+    font: 5rem 'Luckiest Guy', cursive;
+    text-align: center;
+    text-shadow: 0 1px 0 #FFF;
     line-height: 6rem;
     opacity: 0;
     -webkit-transition: opacity 0.5s linear;
     -moz-transition: opacity 0.5s linear;
 }
 
-.choiceDialog span, .serving span {
-    display: block;
-    margin: auto;
-    text-align: center;
-}
-
-.choiceDialog ul li, .serving ul li {
-    display: inline-block;
+button {
     height: 40%;
     width: 45%;
     padding-top: 10px;
-    font-size: 3rem;
-    line-height: 3rem;
+    box-shadow: 0 1px 0 #EEE, inset 0 1px 3px #EEE;
     border: 1px solid darkgrey;
-    text-align: center;
     background-color: darkseagreen;
-    box-shadow: 0px 1px 0 #EEE, inset 0 1px 3px #EEE;
+    font-size: 3rem;
+    font-family: inherit;
+    line-height: 3rem;
+    cursor: pointer;
 }
 
-.serving ul li {
-    display: block;
-    margin: auto;
-}
-
-.choiceDialog ul li:first-child {
-    float: left;
+button.cancel {
     background-color: darksalmon;
-}
-
-.choiceDialog ul li:last-child {
-    float: right;
 }

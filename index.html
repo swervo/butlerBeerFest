@@ -24,48 +24,46 @@
     <body>
         <header>
             <span>☞ 1st Butler Beer Festival 2012 ☜</span>
-            <nav class="mainNav">
-                <a data-target="home" href="#" class="selected"><span>Home</span></a>
-                <a data-target="ales" href="#"><span>Ales</span></a>
+            <nav id="mainNav" class="MainNav">
+                <a data-target="home" href="#" class="MainNav--item js-navItem selected">Home</a>
+                <a data-target="ales" href="#" class="MainNav--item js-navItem">Ales</a>
             </nav>
         </header>
         <div id="mainContent" class="mainContent">
             <div id="ales" class="ales view">
-                <nav>
-                    <div class="order">
-                        <ul id="sortBy">
-                            <li data-option-value="name" data-ascending="true" class="selected">Alphabetical</li>
-                            <li data-option-value="name" data-ascending="false">Reverse alphabetical</li>
-                            <li data-option-value="strength" data-ascending="true">Strength ascending</li>
-                            <li data-option-value="strength" data-ascending="false">Strength descending</li>
-                            <li data-option-value="random"><i>Beer me!</i></li>
-                        </ul>
-                    </div>
+                <nav class="AlesNav">
+                    <ul id="sortBy" class="AlesNav--items">
+                        <li data-option-value="name" data-ascending="true" class="AlesNav--item js-navItem selected">Alphabetical</li>
+                        <li data-option-value="name" data-ascending="false" class="AlesNav--item js-navItem">Reverse alphabetical</li>
+                        <li data-option-value="strength" data-ascending="true" class="AlesNav--item js-navItem">Strength ascending</li>
+                        <li data-option-value="strength" data-ascending="false" class="AlesNav--item js-navItem">Strength descending</li>
+                        <li data-option-value="random" class="AlesNav--item js-navItem"><i>Beer me!</i></li>
+                    </ul>
                 </nav>
                 <div id="mainContainer" class="mainContainer"></div>
-                <div id="choiceDialog" class="choiceDialog">
-                    <span>Is this the ale you're looking for?</span>
-                    <ul class="buttons">
-                        <li id="tryAgain">Nah, try again</li>
-                        <li id="beerMe">Yea! Beer me!</li>
-                    </ul>
+                <div id="choiceDialog" class="Dialog">
+                    Is this the ale you're looking for?
+                    <div>
+                        <button id="tryAgain" class="cancel">Nah, try again</button>
+                        <button id="beerMe">Yea! Beer me!</button>
+                    </div>
                 </div>
-                <div id="serving" class="serving hidden">
-                    <span>Coming right up!</span>
-                    <ul class="buttons">
-                        <li id="cheers">Cheers!</li>
-                    </ul>
+                <div id="serving" class="Dialog hidden">
+                    Coming right up!
+                    <div>
+                        <button id="cheers">Cheers!</button>
+                    </div>
                 </div>
             </div>
             <div id="home" class="home view selected">
-                <H1>☞ Hello and welcome to the 1st Butler Beer Festival</H1>
+                <h1>☞ Hello and welcome to the 1st Butler Beer Festival</h1>
                 <p>If you have heard of this festival then you are among the hand-picked few selected for their deep knowledge and love of ale in all its guises, and their convivial nature.</p>
-                <H2>☞ ☞ Beer festival ale</H2>
+                <h2>☞ ☞ Beer festival ale</h2>
                 <p>All of the ales available at this festival are locally sourced - from Tescos.<br>
                 However there are a couple of guest ales from the Bitter End as well. These will be carefully selected on the day to ensure maximum freshness and originality.</p>
-                <H2>☞ ☞ Food</H2>
+                <h2>☞ ☞ Food</h2>
                 <p>Alongside the delicious ales locally sourced produce will also be available. A range of delicious sausages and handmade breads will be available throughout the day and at very reasonable prices.</p>
-                <H2>☞ ☞ Entertainment</H2>
+                <h2>☞ ☞ Entertainment</h2>
                 <p>Live music will be provided by <a href="http://www.youtube.com/user/hereisfinn">hereisfinn</a> who, in case you haven't heard of her, is an up and coming singer songwriter who has already collected rave reviews and a large and growing fan base.</p>
                 <p>In addition the inaugural pretzel making competition will also be taking place some time during the day.</p>
                 
