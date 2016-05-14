@@ -1,6 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Luckiest+Guy&text=Isthiealyurokngf?!,BmYNCp);
-@import url("isotopeStyles.css");
 
 
 
@@ -16,7 +15,6 @@ html {
 body {
     height: 100%;
     width: 100%;
-    min-width: 1000px;
     background: rgb(4, 41, 46);
     color: rgb(251, 226, 126);
     font-family: 'Open Sans', sans-serif;
@@ -103,19 +101,6 @@ header {
     left: 0;
     height: 100%;
     width: 100%;
-}
-
-.home {
-    font-size: 1.6rem;
-    text-shadow: 0 1px 0 #FFF;
-    padding: 0 10%;
-    box-sizing: border-box;
-}
-
-.home p:last-child {
-    margin-top: 60px;
-    font: 6rem 'Nothing You Could Do', cursive;
-    text-align: center;
 }
 
 .AlesNav {

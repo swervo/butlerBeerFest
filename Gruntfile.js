@@ -98,32 +98,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        requirejs: {
-            main:{
-                options: {
-                    baseUrl: 'app/scripts',
-                    mainConfigFile: 'app/scripts/main.js',
-                    name: '../lib/almond/almond',
-                    include: ['main'],
-                    insertRequire: ['main'],
-                    removeCombined: true,
-                    out: 'build/scripts/main.js',
-                    optimize: 'none'
-                }
-            },
-            bootforce: {
-                options: {
-                    baseUrl: 'app/scripts',
-                    mainConfigFile: 'app/scripts/modules/components/main.js',
-                    name: '../lib/almond/almond',
-                    include: ['modules/components/main.js'],
-                    insertRequire: ['modules/components/main.js'],
-                    removeCombined: true,
-                    out: 'build/dist/<%= pkg.name %>.js',
-                    optimize: 'none'
-                }
-            }
-        },
         uglify: {
             options:{
                 maxLineLen: 500,
@@ -208,9 +182,6 @@ module.exports = function(grunt) {
     grunt.registerTask('server', ['connect:build']);
 
     grunt.registerTask('sassCompile', ['sass', 'notify:sass']);
-
-    grunt.registerTask('dist', ['requirejs:bootforce', 'uglify:bootforce']);
-    grunt.registerTask('main', ['requirejs:main', 'uglify:main']);
 
     grunt.registerTask('build', [
         'jshint',

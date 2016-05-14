@@ -232,12 +232,12 @@ var thisApp = (function() {
             itemSelector: '.BeerTile',
             layoutMode: 'fitRows',
             getSortData: {
-                // name: function ($elem) {
-                //     return $elem.find('.BeerTile--title').text();
-                // },
-                // strength: function($elem) {
-                //     return parseFloat($elem.find('.BeerTile--strength').text());
-                // }
+                name: function (elem) {
+                    return $(elem).find('.BeerTile--title').text();
+                },
+                strength: function(elem) {
+                    return parseFloat($(elem).find('.BeerTile--strength').text());
+                }
             }
         });
     }
