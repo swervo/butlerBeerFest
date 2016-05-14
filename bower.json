@@ -1,0 +1,22 @@
+{
+  "name": "12TapsRandomiser",
+  "homepage": "https://github.com/swervo/butlerBeerFest",
+  "authors": [
+    "Dominic Butler <swervo@papersnail.co.uk>"
+  ],
+  "description": "Tool for helping the thirsty to make up their minds",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "isotope": "^3.0.0"
+  }
+}
