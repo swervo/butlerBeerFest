@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Nothing+You+Could+Do&text=1stBulerFiva2012HASocmngdby);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Luckiest+Guy&text=Isthiealyurokngf?!,BmYNCp);
 @import url("isotopeStyles.css");
@@ -18,8 +17,8 @@ body {
     height: 100%;
     width: 100%;
     min-width: 1000px;
-    background: #FFB6C1 url("assets/100-90-4.png");
-    color: #000;
+    background: rgb(4, 41, 46);
+    color: rgb(251, 226, 126);
     font-family: 'Open Sans', sans-serif;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -69,10 +68,8 @@ ul {
 header {
     height: 10rem;
     border-bottom: 3rem solid black;
-    background: #FFFFE0 url("assets/100-90-4.png");
-    font: 6rem 'Nothing You Could Do', cursive;
+    font-size: 6rem;
     text-align: center;
-    text-shadow: 0 1px 0 #FFF;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -106,11 +103,6 @@ header {
     left: 0;
     height: 100%;
     width: 100%;
-    visibility: hidden;
-}
-
-.view.selected {
-    visibility: visible;
 }
 
 .home {
@@ -143,7 +135,6 @@ header {
     padding-left: 1rem;
     border-radius: 1rem;
     line-height: 2.5rem;
-    text-shadow: 0 1px 0 #EEE;
     -webkit-transition: background-color 0.3s linear;
     -moz-transition: background-color 0.3s linear;
 }
