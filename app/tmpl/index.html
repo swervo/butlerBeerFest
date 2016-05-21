@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="lib/salesforce-lightning-design-system/assets/styles/salesforce-lightning-design-system.css">
     <meta charset="utf-8">
     <title>Browse the taps</title>
     <script type="text/javascript">
@@ -24,9 +25,10 @@
       <nav id="mainNav" class="MainNav">
       </nav>
     </header>
-    <div id="mainContent" class="mainContent">
-      <div id="ales" class="ales view">
-        <nav class="AlesNav">
+    <div id="mainContent" class="mainContent slds-container--x-large slds-container--center">
+      <div class="slds-grid">
+        <div id="mainContainer" class="mainContainer slds-col slds-size--1-of-2 slds-medium-size--2-of-3 slds-large-size--8-of-12"></div>
+        <nav class="AlesNav slds-col--padded slds-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--3-of-12">
           <ul id="sortBy" class="AlesNav--items">
             <li data-option-value="name" data-ascending="true" class="AlesNav--item js-navItem selected">Alphabetical</li>
             <li data-option-value="name" data-ascending="false" class="AlesNav--item js-navItem">Reverse alphabetical</li>
@@ -35,7 +37,6 @@
             <li data-option-value="random" class="AlesNav--item js-navItem"><i>Beer me!</i></li>
           </ul>
         </nav>
-        <div id="mainContainer" class="mainContainer"></div>
         <div id="choiceDialog" class="Dialog">
           Is this the ale you're looking for?
           <div>
@@ -49,6 +50,7 @@
             <button id="cheers">Cheers!</button>
           </div>
         </div>
+
       </div>
     </div>
   </body>

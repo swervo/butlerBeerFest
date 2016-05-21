@@ -8,10 +8,6 @@ html, body, ul {
     margin: 0;
 }
 
-html {
-    font-size: 10px;
-}
-
 body {
     height: 100%;
     width: 100%;
@@ -38,17 +34,6 @@ a.selected {
     color: #FFF;
 }
 
-h1 {
-    margin: 40px 0 25px 0;
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-h2 {
-    margin: 30px 0 10px 0;
-    font-size: 2rem;
-}
-
 ul {
     list-style: none;
 }
@@ -64,12 +49,9 @@ ul {
 }
 
 header {
-    height: 10rem;
+    height: 8rem;
     border-bottom: 3rem solid black;
-    font-size: 6rem;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
+    font-size: 3rem;
 }
 
 .MainNav {
@@ -86,13 +68,6 @@ header {
 
 .mainContent {
     position: relative;
-    height: 100%;
-    width: 95%;
-    margin: 0 auto;
-}
-
-.mainContainer {
-    width: 80%;
 }
 
 .view {
@@ -104,10 +79,9 @@ header {
 }
 
 .AlesNav {
-    width: 20%;
-    margin-top: 1.5rem;
+    margin-top: 10px;
+    font-size: 10px;
     text-transform: uppercase;
-    float: right;
 }
 
 .AlesNav--items {
@@ -147,29 +121,27 @@ header {
 .BeerTile {
     position: absolute;
     height: 300px;
-    width: 300px;
-    margin: 10px;
+    /*width: 300px;*/
+    /*margin: 10px;*/
     box-shadow: 0 0 7px 0 #666;
     border: 5px solid #000;
     border-radius: 5px;
     background-color: white;
     background-repeat: no-repeat;
-    background-position: -80% 5%;
-    font-size: 1.2rem;
+    background-position: -100% 5%;
 }
 
 .BeerTile--title {
-    margin: 22px 0 5px 100px;
-    font-size: 2.5rem;
+    margin: 10px 0 5px 100px;
+    font-size: 1.2rem;
     color: #F01478;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
     text-shadow: 0 0 2px rgba(240, 20, 120, 0.2);
 }
 
 .BeerTile--notes {
     margin: 0 10px 0 100px;
     color: #999;
+    line-height: 1.25;
 }
 
 .BeerTile--brewer {
@@ -191,10 +163,10 @@ header {
     width: 40%;
     top: 35px;
     left: 360px;
-    font: 5rem 'Luckiest Guy', cursive;
+    font: 2.5rem 'Luckiest Guy', cursive;
     text-align: center;
     text-shadow: 0 1px 0 #FFF;
-    line-height: 6rem;
+    line-height: 3rem;
     opacity: 0;
     -webkit-transition: opacity 0.5s linear;
     -moz-transition: opacity 0.5s linear;
