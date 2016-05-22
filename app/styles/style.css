@@ -54,18 +54,6 @@ header {
     font-size: 3rem;
 }
 
-.MainNav {
-    position: absolute;
-    top: 100px;
-    left: 10%;
-    font-size: 1.8rem;
-    text-shadow: none;
-}
-
-.MainNav--item {
-    margin-right: 20px;
-}
-
 .mainContent {
     position: relative;
 }
@@ -121,11 +109,6 @@ header {
 .BeerTile {
     position: absolute;
     height: 300px;
-    /*width: 300px;*/
-    /*margin: 10px;*/
-    box-shadow: 0 0 7px 0 #666;
-    border: 5px solid #000;
-    border-radius: 5px;
     background-color: white;
     background-repeat: no-repeat;
     background-position: -100% 5%;

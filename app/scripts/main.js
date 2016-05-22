@@ -64,7 +64,7 @@ var thisApp = (function() {
                 return (a.beerName < b.beerName) ? -1 : 1;
             });
             $.each(aData, function(idx, aBeer){
-                var tile = $('<div class="BeerTile slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3"></div>').css(
+                var tile = $('<div class="BeerTile slds-box slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3"></div>').css(
                     'background-image',
                     'url(assets/' + aBeer.image + ')'
                 );

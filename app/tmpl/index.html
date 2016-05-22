@@ -4,6 +4,13 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="lib/salesforce-lightning-design-system/assets/styles/salesforce-lightning-design-system.css">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1" />
+    <!-- iOS Full Screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- iOS Status Bar Style (default, black, black-translucent) -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-status-bar-style" content="black-translucent" />
     <title>Browse the taps</title>
     <script type="text/javascript">
 
@@ -26,9 +33,9 @@
       </nav>
     </header>
     <div id="mainContent" class="mainContent slds-container--x-large slds-container--center">
-      <div class="slds-grid">
-        <div id="mainContainer" class="mainContainer slds-col slds-size--1-of-2 slds-medium-size--2-of-3 slds-large-size--8-of-12"></div>
-        <nav class="AlesNav slds-col--padded slds-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--3-of-12">
+      <div class="slds-grid slds-wrap">
+        <div id="mainContainer" class="mainContainer slds-col slds-size--1-of-1 slds-medium-size--2-of-3 slds-large-size--9-of-12 slds-order--2 slds-medium-order--1"></div>
+        <nav class="AlesNav slds-col--padded slds-size--1-of-1 slds-medium-size--1-of-3 slds-large-size--3-of-12 slds-order--1 slds-medium-order--2">
           <ul id="sortBy" class="AlesNav--items">
             <li data-option-value="name" data-ascending="true" class="AlesNav--item js-navItem selected">Alphabetical</li>
             <li data-option-value="name" data-ascending="false" class="AlesNav--item js-navItem">Reverse alphabetical</li>
