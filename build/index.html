@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="lib/salesforce-lightning-design-system/assets/styles/salesforce-lightning-design-system.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1" />
+    <!-- iOS Full Screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- iOS Status Bar Style (default, black, black-translucent) -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Browse the taps</title>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-12491678-5']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </head>
+  <body>
+    <header>
+      <span>Browse the taps</span>
+      <nav id="mainNav" class="MainNav">
+      </nav>
+    </header>
+    <div id="mainContent" class="mainContent slds-container--x-large slds-container--center">
+      <div class="slds-grid slds-wrap">
+        <div id="mainContainer" class="mainContainer slds-col slds-size--1-of-1 slds-medium-size--2-of-3 slds-large-size--9-of-12 slds-order--2 slds-medium-order--1"></div>
+        <nav class="AlesNav slds-col--padded slds-size--1-of-1 slds-medium-size--1-of-3 slds-large-size--3-of-12 slds-order--1 slds-medium-order--2">
+          <ul id="sortBy" class="AlesNav--items">
+            <li data-option-value="name" data-ascending="true" class="AlesNav--item js-navItem selected">Alphabetical</li>
+            <li data-option-value="name" data-ascending="false" class="AlesNav--item js-navItem">Reverse alphabetical</li>
+            <li data-option-value="strength" data-ascending="true" class="AlesNav--item js-navItem">Strength ascending</li>
+            <li data-option-value="strength" data-ascending="false" class="AlesNav--item js-navItem">Strength descending</li>
+            <li data-option-value="random" class="AlesNav--item js-navItem"><i>Beer me!</i></li>
+          </ul>
+        </nav>
+        <div id="choiceDialog" class="Dialog">
+          Is this the ale you're looking for?
+          <div>
+            <button id="tryAgain" class="cancel">Nah, try again</button>
+            <button id="beerMe">Yea! Beer me!</button>
+          </div>
+        </div>
+        <div id="serving" class="Dialog hidden">
+          Coming right up!
+          <div>
+            <button id="cheers">Cheers!</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+  <script src="lib/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="lib/isotope/dist/isotope.pkgd.js" type="text/javascript" charset="utf-8"></script>
+  <script src="scripts/main.js" type="text/javascript"></script>
+</html>

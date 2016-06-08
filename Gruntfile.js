@@ -152,10 +152,13 @@ module.exports = function(grunt) {
                     dest: 'build',
                     src: [
                         'styles/{,*/}**',
-                        'assets/fonts/{,*/}**',
-                        'assets/icons/{,*/}**',
-                        'assets/images/{,*/}**',
-                        'assets/logo/{,*/}**'
+                        'scripts/{,*/}**',
+                        'data/{,*/}**',
+                        'assets/{,*/}**',
+                        'lib/salesforce-lightning-design-system/assets/styles'
+                            + '/salesforce-lightning-design-system.css',
+                        'lib/jquery/dist/jquery.min.js',
+                        'lib/isotope/dist/isotope.pkgd.js'
                     ]
                 }]
             },
@@ -181,13 +184,10 @@ module.exports = function(grunt) {
 
     grunt.registerTask('server', ['connect:build']);
 
-    grunt.registerTask('sassCompile', ['sass', 'notify:sass']);
 
     grunt.registerTask('build', [
         'jshint',
         'bower',
-        'main',
-        'dist',
         'env:prod',
         'copy:static',
         'copy:dev',

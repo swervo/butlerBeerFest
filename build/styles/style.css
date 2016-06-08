@@ -1,0 +1,173 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Luckiest+Guy&text=Isthiealyurokngf?!,BmYNCp);
+
+
+
+html, body, ul {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background: rgb(4, 41, 46);
+    color: rgb(251, 226, 126);
+    font-family: 'Open Sans', sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+a:link,
+a:visited {
+    color: slateblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#FFF;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+a.selected {
+    color: #FFF;
+}
+
+ul {
+    list-style: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.wobble {
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease;
+}
+
+header {
+    height: 8rem;
+    border-bottom: 3rem solid black;
+    font-size: 3rem;
+}
+
+.mainContent {
+    position: relative;
+}
+
+.view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.AlesNav {
+    margin-top: 10px;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.AlesNav--items {
+    padding: 1rem;
+    box-shadow: 1px 1px 0 #EEE, inset 1px 1px 0 #EEE;
+    border: 1px solid #333;
+}
+
+.AlesNav--item {
+    padding-left: 1rem;
+    border-radius: 1rem;
+    line-height: 2.5rem;
+    -webkit-transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
+}
+
+.AlesNav--item:hover {
+    background-color: #BBB;
+    cursor: pointer;
+}
+
+.AlesNav--item.selected {
+    background-color: firebrick;
+    color: #CCC;
+    text-shadow: none;
+}
+
+.AlesNav--item.selected:after {
+    display: inline-block;
+    margin-right: 1rem;
+    content: " ☜";
+    font-size: 3rem;
+    color: #FFF;
+    float: right;
+}
+
+.BeerTile {
+    position: absolute;
+    height: 300px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: -100% 5%;
+}
+
+.BeerTile--title {
+    margin: 10px 0 5px 100px;
+    font-size: 1.2rem;
+    color: #F01478;
+    text-shadow: 0 0 2px rgba(240, 20, 120, 0.2);
+}
+
+.BeerTile--notes {
+    margin: 0 10px 0 100px;
+    color: #999;
+    line-height: 1.25;
+}
+
+.BeerTile--brewer {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+.BeerTile--strength {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color: #757575;
+}
+
+.Dialog {
+    position: absolute;
+    height: 40%;
+    width: 40%;
+    top: 35px;
+    left: 360px;
+    font: 2.5rem 'Luckiest Guy', cursive;
+    text-align: center;
+    text-shadow: 0 1px 0 #FFF;
+    line-height: 3rem;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+}
+
+button {
+    height: 40%;
+    width: 45%;
+    padding-top: 10px;
+    box-shadow: 0 1px 0 #EEE, inset 0 1px 3px #EEE;
+    border: 1px solid darkgrey;
+    background-color: darkseagreen;
+    font-size: 3rem;
+    font-family: inherit;
+    line-height: 3rem;
+    cursor: pointer;
+}
+
+button.cancel {
+    background-color: darksalmon;
+}
