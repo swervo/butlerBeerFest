@@ -58,37 +58,39 @@ var thisApp = (function() {
         $sortLinks = $('.js-navItem', $sort);
 
         
-        $.getJSON('data/beers.json').success(function(aData) {
+        $.getJSON('data/beers.json').done(function(aData) {
             // sort the data array alphabetically initially
             aData.sort(function(a, b){
                 return (a.beerName < b.beerName) ? -1 : 1;
             });
             $.each(aData, function(idx, aBeer){
-                var tile = $('<div class="BeerTile slds-box slds-size--1-of-1'
-                                + 'slds-medium-size--1-of-2 slds-large-size--1-of-3"></div>').css(
-                    'background-image',
-                    'url(assets/' + aBeer.image + ')'
-                );
-                var beerName = $('<div class="BeerTile--title">'+ aBeer.beerName +'</div>');
-                var beerDetails = $('<p class="BeerTile--notes">' + aBeer.notes + '</p>');
-                var beerStrength = $('<span class="BeerTile--strength">' + aBeer.strength + '%' + '</span>');
-                var brewer = $('<span class="BeerTile--brewer">' + aBeer.brewery + '</span>');
-                
-                beerTiles.push(tile);
-                tile.append(beerName);
-                tile.append(beerDetails);
-                tile.append(beerStrength);
-                tile.append(brewer);
-                $mainContainer.append(tile);
+                if (aBeer.isOnTap) {
+                    var tile = $('<div class="BeerTile slds-box slds-size--1-of-1 '
+                                    + 'slds-medium-size--1-of-2 slds-large-size--1-of-3"></div>');
+                    var beerImage = $('<img src="assets/' + aBeer.image + '" />');
+                    var beerName = $('<div class="BeerTile--title">'+ aBeer.beerName +'</div>');
+                    var beerDetails = $('<p class="BeerTile--notes">' + aBeer.notes + '</p>');
+                    var beerStrength = $('<span class="BeerTile--strength">'
+                        + aBeer.strength + '%' + '</span>');
+                    var brewer = $('<span class="BeerTile--brewer">' + aBeer.brewery + '</span>');
+                    
+                    beerTiles.push(tile);
+                    tile.append(beerImage);
+                    tile.append(beerName);
+                    tile.append(beerDetails);
+                    tile.append(beerStrength);
+                    tile.append(brewer);
+                    $mainContainer.append(tile);
+                }
                 
             });
             
             initialiseLayout();
         })
-        .error(function() {
+        .fail(function() {
             utils.print('json load error');
         })
-        .complete(function() {
+        .always(function() {
             utils.print('data load done');
         });
     }

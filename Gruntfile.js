@@ -52,8 +52,8 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            files: ['app/sass/**/*.scss', 'app/scripts/**/*.js', 'app/tmpl/**/*.html'],
-            tasks: ['preprocess', 'sassCompile'],
+            files: ['app/styles/**/*.css', 'app/scripts/**/*.js', 'app/tmpl/**/*.html'],
+            tasks: ['preprocess'],
             options: {
                 spawn: false,
                 livereload: true
@@ -63,22 +63,6 @@ module.exports = function(grunt) {
             files: ['Gruntfile.js', 'app/scripts/**/*.js'],
             options: {
                 jshintrc: true
-            }
-        },
-        sass: {
-            options: {
-                sourceMap: true,
-                outputStyle: 'expanded',
-                sourceComments: false,
-                includePaths: [
-                    'app/lib/salesforce-lightning-design-system/scss',
-                    'app/lib/font-awesome'
-                ]
-            },
-            dist: {
-                files: {
-                    'app/styles/main.css': 'app/sass/main.scss'
-                }
             }
         },
         connect: {
