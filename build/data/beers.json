@@ -5,7 +5,8 @@
     "beerType": "session",
     "strength": "4.4",
     "notes": "Hopping Hare is thrice hopped with three types of hop used during the brewing process. Aromatic Goldings and Cascade combine to provide an uplifting citrus-grapefruit and floral aroma, whilst First Gold carries the bitterness.",
-    "image" : "hoppingHare.jpg"
+    "image" : "hoppingHare.jpg",
+    "isOnTap": true
 }, {
     "beerName": "Old Speckled Hen",
     "brewery" : "Morland Brewery",
@@ -13,7 +14,8 @@
     "beerType": "ipa",
     "strength": "5.4",
     "notes": "Old Speckled Hen has a full, smooth flavour and is very easy to drink. Its rich amber colour and superb fruity aromas are complemented by a delicious blend of malty tastes. Toffee and malt combine with bitterness on the back of the tongue to give a balanced sweetness, followed by a refreshingly dry finish",
-    "image" : "oldSpeckledHen.jpg"
+    "image" : "oldSpeckledHen.jpg",
+    "isOnTap": true
 }, {
     "beerName": "Hobgoblin",
     "brewery" : "Wychwood Brewery",
@@ -21,7 +23,8 @@
     "beerType": "ruby",
     "strength": "5.2",
     "notes": "Traditionally craft brewed with Chocolate and Crystal malts and a blend of Styrian, Goldings & Fuggles hops to produce a full-bodied, Ruby beer that delivers a delicious chocolate toffee malt flavour, balanced with a rounded moderate bitterness and an overall fruity, mischievous character",
-    "image" : "hobgoblin.jpg"
+    "image" : "hobgoblin.jpg",
+    "isOnTap": true
 }, {
     "beerName": "Champion Ale",
     "brewery" : "McEwans Brewery",
@@ -29,7 +32,8 @@
     "beerType": "strong",
     "strength": "7.3",
     "notes": "An overly strong brew that clearly knows it's audience and a good way 'tae get pure shteamin'. No trace of the true origins of this mystic brew can be found anywhere on the whole internets. Beware.",
-    "image" : "mcewansChampion.jpg"
+    "image" : "mcewansChampion.jpg",
+    "isOnTap": true
 }, {
     "beerName": "Old Tom Ale",
     "brewery" : "Robinsons Unicorn Brewery",
@@ -37,7 +41,8 @@
     "beerType": "strong",
     "strength": "8.5",
     "notes": "Superior dark, rich and warming strong ale with a cherry brandy like colour and character. Booming balance of ripe malt, and peppery hops combined with roasted nut and chocolate flavours with a smoky richness. Distinctive deep port wine finish with bitter hops balance complemented by heady, vinous aromas of dark fruit.",
-    "image" : "oldTom.jpg"
+    "image" : "oldTom.jpg",
+    "isOnTap": true
 }, {
     "beerName": "Abbot Ale",
     "brewery" : "Green King, Westgate Brewery",
@@ -45,7 +50,8 @@
     "beerType": "strong",
     "strength": "5",
     "notes": "Hailed by the late beer writer Michael Jackson as 'one of the great characters of the beer world', Abbot Ale is brewed for quality of the highest order. Abbot is an irresistible ale with masses of fruit characters, a malty richness and superb hop balance. It is brewed longer to a unique recipe, which makes it the full-flavoured, smooth and mature beer it is today",
-    "image" : "abbot.jpg"
+    "image" : "abbot.jpg",
+    "isOnTap": true
 }, {
     "beerName": "Brains SA",
     "brewery" : "The Cardiff Brewery",
@@ -53,7 +59,8 @@
     "beerType": "session",
     "strength": "4.2",
     "notes": "The renowned 'special ale' is copper coloured with a full premium quality flavour. A nutty richness derived from a blend of fine pale and crystal malts is balanced with a satisfying dryness from the unique use of three hops: Challenger, Goldings and Fuggles. The aroma has a hint of spirit which adds to the legendary mystique of this premium cask beer",
-    "image" : "brainsSA.jpg"
+    "image" : "brainsSA.jpg",
+    "isOnTap": true
 }, {
     "beerName": "1845",
     "brewery" : "Fullers Brewery",
@@ -61,7 +68,8 @@
     "beerType": "strong",
     "strength": "6.3",
     "notes": "Roger Protz, beer writer and critic, describes 1845 as 'a rich beer with a fruit cake aroma, spices and nutmeg from malt and hops resulting in a dry, fruity finish'. It is also bottle conditioned, which means it is live beer which continues to ferment in bottle, adding to the complex development of flavours.",
-    "image" : "1845.jpg"
+    "image" : "1845.jpg",
+    "isOnTap": true
 }, {
     "beerName": "Poacher's Choice",
     "brewery" : "Badger Brewery",
@@ -69,7 +77,8 @@
     "beerType": "ruby",
     "strength": "5.7",
     "notes": "A rich, smooth brew with a softly spiced sweetness with dark liquorice notes and a fruity damson aroma. Poachers Choice is a gutsy ruby ale that is sweet, full bodied, malty & bitter",
-    "image" : "poachersChoice.jpg"
+    "image" : "poachersChoice.jpg",
+    "isOnTap": true
 }, {
     "beerName": "Holy Grail",
     "brewery" : "Black Sheep Brewery",
@@ -77,7 +86,8 @@
     "beerType": "ruby",
     "strength": "4.7",
     "notes": "More hops than a killer rabbit, a full-flavoured golden ale with a distinctively fruity flavour followed by the Black Sheep signature dry finish. Dangerously fruity against a biscuity, Maris Otter, malty background. Holy Grail doesn’t disappoint with its clean zesty flavour and long crisp bitter finish.",
-    "image" : "holyGrailAle.jpg"
+    "image" : "holyGrailAle.jpg",
+    "isOnTap": false
 }, {
     "beerName": "Hop Head",
     "brewery" : "Dark Star",
@@ -85,7 +95,8 @@
     "beerType": "!!!!!",
     "strength": "3.8",
     "notes": "A delicious guest ale sourced from a well known and popular local hostelry. Chosen on the day for freshness and originality.",
-    "image" : "guest.png"
+    "image" : "guest.png",
+    "isOnTap": true
 }, {
     "beerName": "Harveys Best",
     "brewery" : "Harveys",
@@ -93,5 +104,15 @@
     "beerType": "!!!!!",
     "strength": "4.0",
     "notes": "A delicious guest ale sourced from a well known and popular local hostelry. Chosen on the day for freshness and originality.",
-    "image" : "knownGuest.png"
+    "image" : "knownGuest.png",
+    "isOnTap": true
+}, {
+    "beerName": "Magic brew",
+    "brewery" : "Beavertown",
+    "region"  : "??????????",
+    "beerType": "!!!!!",
+    "strength": "4.0",
+    "notes": "Chosen on the day for freshness and originality.",
+    "image" : "knownGuest.png",
+    "isOnTap": true
 }]
